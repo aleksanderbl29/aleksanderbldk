@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://aleksanderbl.dk/guides.html</loc>
+    <lastmod>2024-05-17T19:20:18.021Z</lastmod>
+  </url>
+  <url>
+    <loc>https://aleksanderbl.dk/guides/2024-05-17-quarto-blog/index.html</loc>
+    <lastmod>2024-05-17T19:20:18.021Z</lastmod>
+  </url>
+  <url>
     <loc>https://aleksanderbl.dk/about.html</loc>
-    <lastmod>2024-05-17T18:46:27.970Z</lastmod>
+    <lastmod>2024-05-17T19:20:18.021Z</lastmod>
   </url>
   <url>
     <loc>https://aleksanderbl.dk/index.html</loc>
-    <lastmod>2024-05-17T18:46:28.001Z</lastmod>
-  </url>
-  <url>
-    <loc>https://aleksanderbl.dk/oss.html</loc>
-    <lastmod>2024-05-17T18:46:28.001Z</lastmod>
-  </url>
-  <url>
-    <loc>https://aleksanderbl.dk/guides.html</loc>
-    <lastmod>2024-05-17T18:46:27.992Z</lastmod>
+    <lastmod>2024-05-17T19:20:18.025Z</lastmod>
   </url>
 </urlset>
