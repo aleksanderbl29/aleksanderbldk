@@ -80,7 +80,7 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-date','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-image','listing-title','listing-description','listing-subtitle',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
       searchColumns: ["listing-title","listing-author","listing-date","listing-image","listing-description","listing-categories"],
     };
@@ -99,6 +99,7 @@ ul.task-list li input[type="checkbox"] {
     }
   })
   </script>
+<style>html{ scroll-behavior: smooth; }</style>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -246,15 +247,6 @@ window.Quarto = {
          <option value="listing-title" data-direction="asc">
           Overskrift
         </option>
-         <option value="listing-date-sort" data-direction="asc">
-          Dato - Ældste
-        </option>
-         <option value="listing-date-sort" data-direction="desc">
-          Dato - Nyeste
-        </option>
-         <option value="listing-author" data-direction="asc">
-          Forfatter
-        </option>
      </select>
   </div>
     <div class="input-group input-group-sm quarto-listing-filter">
@@ -263,7 +255,7 @@ window.Quarto = {
     </div>
 </div>
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-date-sort="1716076800000" data-listing-file-modified-sort="1715981138593" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="41">
+<div class="g-col-1" data-index="0" data-listing-date-sort="1716076800000" data-listing-file-modified-sort="1715984301985" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="41">
 <a href="./guides/2024-05-19-danmarkskort-i-r/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
@@ -274,19 +266,11 @@ Nemt Danmarkskort i R
 <div class="card-text listing-description">
 Da jeg skulle lære at lave kort i R, lavede jeg et par hurtige googlesøgninger, hvor jeg kom frem til en god guide lavet af Mikkel Freltoft <span class="citation" data-cites="krogsholm2021">Krogsholm (2021)</span>. Jeg opdagede…
 </div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Aleksander Bang-Larsen
-</div>
-<div class="listing-date">
-19. maj 2024
-</div>
-</div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-categories="Zotero" data-listing-date-sort="1715904000000" data-listing-file-modified-sort="1715981138593" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="34">
+<div class="g-col-1" data-index="1" data-categories="Zotero" data-listing-date-sort="1715904000000" data-listing-file-modified-sort="1715984301985" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="34">
 <a href="./guides/2024-05-17-installer-output-zotero/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <div class="listing-item-img-placeholder card-img-top" style="height: 150px;">&nbsp;</div>
@@ -294,27 +278,14 @@ Aleksander Bang-Larsen
 <h5 class="no-anchor card-title listing-title">
 Sådan installerer du et nyt output-format i Zotero
 </h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Zotero'); return false;">
-Zotero
-</div>
-</div>
 <div class="card-text listing-description">
 En kort guide til installation af Politica output format
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Aleksander Bang-Larsen
-</div>
-<div class="listing-date">
-17. maj 2024
-</div>
 </div>
 </div>
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-categories="Quarto,R,Github Actions" data-listing-date-sort="1715731200000" data-listing-file-modified-sort="1715981138593" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="45">
+<div class="g-col-1" data-index="2" data-categories="Quarto,R,Github Actions" data-listing-date-sort="1715731200000" data-listing-file-modified-sort="1715984301985" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="45">
 <a href="./guides/2024-05-17-quarto-blog/index.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -324,27 +295,8 @@ Aleksander Bang-Larsen
 <h5 class="no-anchor card-title listing-title">
 Hvordan laver man en hjemmeside med Quarto?
 </h5>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Quarto'); return false;">
-Quarto
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
-R
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Github Actions'); return false;">
-Github Actions
-</div>
-</div>
 <div class="card-text listing-description">
 Vi gennemgår layout, generering af indhold og hvordan du får din side “ud på internettet”
-</div>
-<div class="card-attribution card-text-small justify">
-<div class="listing-author">
-Aleksander Bang-Larsen
-</div>
-<div class="listing-date">
-15. maj 2024
-</div>
 </div>
 </div>
 </div>
@@ -782,4 +734,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>
