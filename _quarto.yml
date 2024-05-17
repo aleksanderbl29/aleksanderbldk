@@ -1,0 +1,59 @@
+---
+project:
+  type: website
+  title: "Aleksanders Website"
+  output-dir: docs
+  preview:
+    port: 4200
+    browser: false
+
+lang: da
+
+website:
+  title: "Aleksander Bang-Larsen"
+  navbar:
+    background: $background-color
+    right:
+      - href: index.qmd
+        text: Forside
+        icon: house-door-fill
+      - guides.qmd
+      - href: https://cv.aleksanderbl.dk
+        text: CV
+        icon: file-earmark-person-fill
+        target: _blank
+      - about.qmd
+      - text: Kontakt mig
+        menu:
+          - icon: twitter
+            text: Twitter
+            href: https://x.com/bang_aleksander
+            target: _blank
+          - icon: linkedin
+            text: LinkedIn
+            href: https://www.linkedin.com/in/aleksanderbl
+            target: _blank
+          - icon: envelope
+            text: E-Mail
+            href: mailto:hej@aleksanderbl.dk
+      - icon: github
+        href: https://github.com/aleksanderbl29/aleksanderbldk
+        target: _blank
+  page-footer:
+    background: light
+    left: © Copyright 2024, Aleksander Bang-Larsen
+    right: Denne side er bygget med [{{< fa brands github title="GitHub octocat logo" >}}](https://github.com/aleksanderbl29/aleksanderbldk){target=_blank}, [{{< fa brands r-project title="R Project" >}}](https://www.r-project.org/about.html){target=_blank} og [Quarto](https://quarto.org/){target=_blank}
+
+  repo-actions: []
+  repo-url: https://github.com/aleksanderbl29/aleksanderbldk
+  repo-link-target: _blank
+  site-url: https://aleksanderbl.dk
+
+  # reader-mode: true
+
+format:
+  html:
+    theme:
+      - cosmo
+      - styles.css
+    toc: true

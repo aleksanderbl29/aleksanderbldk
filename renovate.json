@@ -1,0 +1,14 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    ":dependencyDashboard"
+  ],
+  "timezone": "Europe/Copenhagen",
+  "schedule": [
+    "after 5pm"
+  ],
+  "assignees": [
+    "aleksanderbl29"
+  ]
+}

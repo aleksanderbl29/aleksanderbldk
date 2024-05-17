@@ -1,0 +1,29 @@
+---
+title: ""
+image: images/aleksander.jpg
+toc: false
+about:
+  template: jolla
+  image-shape: round
+  image-width: 14em
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/aleksanderbl
+      target: _blank
+    # - icon: twitter
+    #   text: Twitter
+    #   href: https://twitter.com/SamanthaCsik
+    #   target: _blank
+    - icon: github
+      text: GitHub
+      href: https://github.com/aleksanderbl29
+      target: _blank
+    - icon: envelope
+      text: Email
+      href: mailto:hej@aleksanderbl.dk
+---
+
+Hej! Jeg hedder Aleksander og studerer statskundskab ved Aarhus Universitet.
+
+Her på siden har jeg samlet mit cv, beretninger om min teknologiske læring og en række guides til at give noget af min læring videre.
