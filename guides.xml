@@ -10,9 +10,42 @@
 <atom:link href="https://aleksanderbl.dk/guides.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.4.554</generator>
-<lastBuildDate>Wed, 15 May 2024 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 17 May 2024 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Sådan installerer du et nyt output-format i Zotero</title>
+  <dc:creator>Aleksander Bang-Larsen</dc:creator>
+  <link>https://aleksanderbl.dk/guides/2024-05-17-installer-output-zotero/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="baggrund" class="level2">
+<h2 class="anchored" data-anchor-id="baggrund">Baggrund</h2>
+<p>Denne guide er beregnet til personer der er blevet vist hertil og har fået tilsendt mit speciallavede politica-output til Zotero. Her vil du finde vejledning til, hvordan du importerer og bruger den med dine henvisninger.</p>
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citat</h2><div><div class="quarto-appendix-secondary-label">Henvis til dette arbejde som:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang-larsen2024,
+  author = {Bang-Larsen, Aleksander},
+  title = {Sådan installerer du et nyt output-format i Zotero},
+  date = {2024-05-17},
+  url = {https://aleksanderbl.dk/guides/2024-05-17-installer-output-zotero},
+  langid = {da}
+}
+</code></pre><div class="quarto-appendix-secondary-label">BibTeX henvisning:</div><div id="ref-bang-larsen2024" class="csl-entry quarto-appendix-citeas">
+Bang-Larsen, Aleksander. 2024. <span>“Sådan installerer du et nyt
+output-format i Zotero.”</span> May 17, 2024. <a href="https://aleksanderbl.dk/guides/2024-05-17-installer-output-zotero">https://aleksanderbl.dk/guides/2024-05-17-installer-output-zotero</a>.
+</div></div></section></div> ]]></description>
+  <category>Zotero</category>
+  <guid>https://aleksanderbl.dk/guides/2024-05-17-installer-output-zotero/</guid>
+  <pubDate>Fri, 17 May 2024 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Hvordan laver man en hjemmeside med Quarto?</title>
+  <dc:creator>Aleksander Bang-Larsen</dc:creator>
   <link>https://aleksanderbl.dk/guides/2024-05-17-quarto-blog/</link>
   <description><![CDATA[ 
 
@@ -27,16 +60,16 @@
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citat</h2><div><div class="quarto-appendix-secondary-label">Henvis til dette arbejde som:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{2024,
-  author = {},
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citat</h2><div><div class="quarto-appendix-secondary-label">Henvis til dette arbejde som:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang-larsen2024,
+  author = {Bang-Larsen, Aleksander},
   title = {Hvordan laver man en hjemmeside med Quarto?},
   date = {2024-05-15},
   url = {https://aleksanderbl.dk/guides/quarto-blog},
   langid = {da}
 }
-</code></pre><div class="quarto-appendix-secondary-label">BibTeX henvisning:</div><div id="ref-2024" class="csl-entry quarto-appendix-citeas">
-<span>“Hvordan laver man en hjemmeside med Quarto?”</span> 2024. May 15,
-2024. <a href="https://aleksanderbl.dk/guides/quarto-blog">https://aleksanderbl.dk/guides/quarto-blog</a>.
+</code></pre><div class="quarto-appendix-secondary-label">BibTeX henvisning:</div><div id="ref-bang-larsen2024" class="csl-entry quarto-appendix-citeas">
+Bang-Larsen, Aleksander. 2024. <span>“Hvordan laver man en hjemmeside
+med Quarto?”</span> May 15, 2024. <a href="https://aleksanderbl.dk/guides/quarto-blog">https://aleksanderbl.dk/guides/quarto-blog</a>.
 </div></div></section></div> ]]></description>
   <category>Quarto</category>
   <category>R</category>
@@ -46,6 +79,7 @@
 </item>
 <item>
   <title>Nemt Danmarkskort i R</title>
+  <dc:creator>Aleksander Bang-Larsen</dc:creator>
   <link>https://aleksanderbl.dk/guides/2024-05-17-danmarkskort-i-r/</link>
   <description><![CDATA[ 
 
@@ -58,7 +92,7 @@
 
  ]]></description>
   <guid>https://aleksanderbl.dk/guides/2024-05-17-danmarkskort-i-r/</guid>
-  <pubDate>Fri, 17 May 2024 19:23:47 GMT</pubDate>
+  <pubDate>Fri, 17 May 2024 21:22:15 GMT</pubDate>
 </item>
 </channel>
 </rss>

@@ -4,7 +4,14 @@
     "href": "guides.html",
     "title": "Guides",
     "section": "",
-    "text": "Sorter ved\n       Standard\n         \n          Overskrift\n        \n         \n          Dato - Ældste\n        \n         \n          Dato - Nyeste\n        \n         \n          Forfatter\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nNemt Danmarkskort i R\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHvordan laver man en hjemmeside med Quarto?\n\n\n\nQuarto\n\n\nR\n\n\nGithub Actions\n\n\n\nVi gennemgår layout, generering af indhold og hvordan du får din side “ud på internettet”\n\n\n\n\n\n\n15. maj 2024\n\n\n\n\n\n\n\n\nIngen resultater"
+    "text": "Sorter ved\n       Standard\n         \n          Overskrift\n        \n         \n          Dato - Ældste\n        \n         \n          Dato - Nyeste\n        \n         \n          Forfatter\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nNemt Danmarkskort i R\n\n\n\n\n\n\nAleksander Bang-Larsen\n\n\n\n\n\n\n\n\n\n\n\n\nSådan installerer du et nyt output-format i Zotero\n\n\n\nZotero\n\n\n\nEn kort guide til installation af Politica output format\n\n\n\nAleksander Bang-Larsen\n\n\n17. maj 2024\n\n\n\n\n\n\n\n\n\n\n\n\nHvordan laver man en hjemmeside med Quarto?\n\n\n\nQuarto\n\n\nR\n\n\nGithub Actions\n\n\n\nVi gennemgår layout, generering af indhold og hvordan du får din side “ud på internettet”\n\n\n\nAleksander Bang-Larsen\n\n\n15. maj 2024\n\n\n\n\n\n\n\n\nIngen resultater"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Aleksander Bang-Larsen",
+    "section": "",
+    "text": "Hej! Jeg hedder Aleksander og studerer statskundskab ved Aarhus Universitet.\nHer på siden har jeg samlet mit cv, beretninger om min teknologiske læring og en række guides til at give noget af min læring videre."
   },
   {
     "objectID": "guides/2024-05-17-quarto-blog/index.html",
@@ -21,17 +28,17 @@
     "text": "Hvilke værktøjer skal vi bruge og hvordan spiller de sammen?"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "Om mig",
+    "objectID": "guides/2024-05-17-installer-output-zotero/index.html",
+    "href": "guides/2024-05-17-installer-output-zotero/index.html",
+    "title": "Sådan installerer du et nyt output-format i Zotero",
     "section": "",
-    "text": "About this site"
+    "text": "Denne guide er beregnet til personer der er blevet vist hertil og har fået tilsendt mit speciallavede politica-output til Zotero. Her vil du finde vejledning til, hvordan du importerer og bruger den med dine henvisninger."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Aleksander Bang-Larsen",
+    "objectID": "guides/2024-05-17-installer-output-zotero/index.html#baggrund",
+    "href": "guides/2024-05-17-installer-output-zotero/index.html#baggrund",
+    "title": "Sådan installerer du et nyt output-format i Zotero",
     "section": "",
-    "text": "Hej! Jeg hedder Aleksander og studerer statskundskab ved Aarhus Universitet.\nHer på siden har jeg samlet mit cv, beretninger om min teknologiske læring og en række guides til at give noget af min læring videre."
+    "text": "Denne guide er beregnet til personer der er blevet vist hertil og har fået tilsendt mit speciallavede politica-output til Zotero. Her vil du finde vejledning til, hvordan du importerer og bruger den med dine henvisninger."
   }
 ]
