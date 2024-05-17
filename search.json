@@ -4,7 +4,21 @@
     "href": "guides.html",
     "title": "Guides",
     "section": "",
-    "text": "Sorter ved\n       Standard\n         \n          Overskrift\n        \n         \n          Dato - Ældste\n        \n         \n          Dato - Nyeste\n        \n         \n          Forfatter\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nNemt Danmarkskort i R\n\n\n\n\n\n\nAleksander Bang-Larsen\n\n\n\n\n\n\n\n\n\n\n\n\nSådan installerer du et nyt output-format i Zotero\n\n\n\nZotero\n\n\n\nEn kort guide til installation af Politica output format\n\n\n\nAleksander Bang-Larsen\n\n\n17. maj 2024\n\n\n\n\n\n\n\n\n\n\n\n\nHvordan laver man en hjemmeside med Quarto?\n\n\n\nQuarto\n\n\nR\n\n\nGithub Actions\n\n\n\nVi gennemgår layout, generering af indhold og hvordan du får din side “ud på internettet”\n\n\n\nAleksander Bang-Larsen\n\n\n15. maj 2024\n\n\n\n\n\n\n\n\nIngen resultater"
+    "text": "Sorter ved\n       Standard\n         \n          Overskrift\n        \n         \n          Dato - Ældste\n        \n         \n          Dato - Nyeste\n        \n         \n          Forfatter\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nNemt Danmarkskort i R\n\n\n\n\n\n\nAleksander Bang-Larsen\n\n\n19. maj 2024\n\n\n\n\n\n\n\n\n\n\n\n\nSådan installerer du et nyt output-format i Zotero\n\n\n\nZotero\n\n\n\nEn kort guide til installation af Politica output format\n\n\n\nAleksander Bang-Larsen\n\n\n17. maj 2024\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHvordan laver man en hjemmeside med Quarto?\n\n\n\nQuarto\n\n\nR\n\n\nGithub Actions\n\n\n\nVi gennemgår layout, generering af indhold og hvordan du får din side “ud på internettet”\n\n\n\nAleksander Bang-Larsen\n\n\n15. maj 2024\n\n\n\n\n\n\n\n\nIngen resultater"
+  },
+  {
+    "objectID": "guides/2024-05-19-danmarkskort-i-r/index.html",
+    "href": "guides/2024-05-19-danmarkskort-i-r/index.html",
+    "title": "Nemt Danmarkskort i R",
+    "section": "",
+    "text": "Da jeg skulle lære at lave kort i R, lavede jeg et par hurtige googlesøgninger, hvor jeg kom frem til en god guide lavet af Mikkel Freltoft Krogsholm (2021). Jeg opdagede dog hurtigt, at guiden er out-of-date (hvorfor jeg skriver denne guide)."
+  },
+  {
+    "objectID": "guides/2024-05-19-danmarkskort-i-r/index.html#baggrund",
+    "href": "guides/2024-05-19-danmarkskort-i-r/index.html#baggrund",
+    "title": "Nemt Danmarkskort i R",
+    "section": "",
+    "text": "Da jeg skulle lære at lave kort i R, lavede jeg et par hurtige googlesøgninger, hvor jeg kom frem til en god guide lavet af Mikkel Freltoft Krogsholm (2021). Jeg opdagede dog hurtigt, at guiden er out-of-date (hvorfor jeg skriver denne guide)."
   },
   {
     "objectID": "index.html",
@@ -18,14 +32,14 @@
     "href": "guides/2024-05-17-quarto-blog/index.html",
     "title": "Hvordan laver man en hjemmeside med Quarto?",
     "section": "",
-    "text": "Hvilke værktøjer skal vi bruge og hvordan spiller de sammen?"
+    "text": "Hvilke værktøjer skal vi bruge og hvordan spiller de sammen?\n\n\nWhen you’ve written the same code 3 times, write a functionWhen you’ve given the same in-person advice 3 times, write a blog post\n\n— David Robinson (@drob) November 9, 2017"
   },
   {
     "objectID": "guides/2024-05-17-quarto-blog/index.html#overblik",
     "href": "guides/2024-05-17-quarto-blog/index.html#overblik",
     "title": "Hvordan laver man en hjemmeside med Quarto?",
     "section": "",
-    "text": "Hvilke værktøjer skal vi bruge og hvordan spiller de sammen?"
+    "text": "Hvilke værktøjer skal vi bruge og hvordan spiller de sammen?\n\n\nWhen you’ve written the same code 3 times, write a functionWhen you’ve given the same in-person advice 3 times, write a blog post\n\n— David Robinson (@drob) November 9, 2017"
   },
   {
     "objectID": "guides/2024-05-17-installer-output-zotero/index.html",
