@@ -57,3 +57,4 @@ format:
       - cosmo
       - styles.css
     toc: true
+    smooth-scroll: true
