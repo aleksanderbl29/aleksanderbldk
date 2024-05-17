@@ -1,0 +1,11 @@
+---
+title: Nemt Danmarkskort i R
+citation:
+  url: https://aleksanderbl.dk/guides/2024-05-19-danmarkskort-i-r
+bibliography: refs.bib
+date: 2024-05-19
+---
+
+## Baggrund
+
+Da jeg skulle lære at lave kort i R, lavede jeg et par hurtige googlesøgninger, hvor jeg kom frem til en god guide lavet af Mikkel Freltoft @krogsholm2021. Jeg opdagede dog hurtigt, at guiden er out-of-date (hvorfor jeg skriver denne guide).

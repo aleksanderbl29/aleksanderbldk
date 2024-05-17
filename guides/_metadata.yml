@@ -3,11 +3,11 @@
 
 # freeze computational output
 # (see https://quarto.org/docs/projects/code-execution.html#freeze)
-freeze: true
+freeze: auto
 
 # Enable banner style title blocks
 title-block-banner: true
 
 # no table of contents
-toc: false
+toc: true
 author: "Aleksander Bang-Larsen"

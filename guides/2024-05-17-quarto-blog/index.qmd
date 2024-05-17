@@ -7,8 +7,25 @@ aliases:
   - quarto-blog.html
 citation:
   url: "https://aleksanderbl.dk/guides/quarto-blog"
+image: "images/thumbnail.jpg"
 ---
 
 ## Overblik
 
 Hvilke værktøjer skal vi bruge og hvordan spiller de sammen?
+
+<blockquote class="twitter-tweet">
+
+<p lang="en" dir="ltr">
+
+When you've written the same code 3 times, write a function<br><br>When you've given the same in-person advice 3 times, write a blog post
+
+</p>
+
+--- David Robinson (@drob) <a href="https://twitter.com/drob/status/928447584712253440?ref_src=twsrc%5Etfw">November 9, 2017</a>
+
+</blockquote>
+
+```{=html}
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+```
