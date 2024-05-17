@@ -1,0 +1,14 @@
+---
+title: Sådan installerer du et nyt output-format i Zotero
+description: En kort guide til installation af Politica output format
+categories: [Zotero]
+citation:
+  url: https://aleksanderbl.dk/guides/2024-05-17-installer-output-zotero
+bibliography: refs.bib
+date: 2024-05-17
+---
+
+## Baggrund
+
+Denne guide er beregnet til personer der er blevet vist hertil og har fået tilsendt mit speciallavede politica-output til Zotero.
+Her vil du finde vejledning til, hvordan du importerer og bruger den med dine henvisninger.
