@@ -11,3 +11,7 @@ title-block-banner: true
 # no table of contents
 toc: true
 author: "Aleksander Bang-Larsen"
+
+language:
+  appendix-attribution-bibtex: "Henvis til denne guide som:"
+  appendix-attribution-cite-as: "BibTeX henvisning:"
