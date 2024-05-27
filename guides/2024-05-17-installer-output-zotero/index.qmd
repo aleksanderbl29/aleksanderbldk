@@ -21,5 +21,5 @@ other-links:
 
 ## Baggrund
 
-Denne guide er beregnet til personer der er blevet vist hertil og har fået tilsendt mit speciallavede politica-output til Zotero.
+Denne guide er beregnet til dig, der er blevet vist hertil og har fået tilsendt mit speciallavede politica-output til Zotero.
 Her vil du finde vejledning til, hvordan du importerer og bruger den med dine henvisninger.
