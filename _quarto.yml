@@ -48,6 +48,7 @@ website:
   repo-url: https://github.com/aleksanderbl29/aleksanderbldk
   repo-link-target: _blank
   site-url: https://aleksanderbl.dk
+  open-graph: true
 
   # reader-mode: true
 
