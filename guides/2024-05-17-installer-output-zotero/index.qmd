@@ -7,6 +7,16 @@ citation:
   url: https://aleksanderbl.dk/guides/2024-05-17-installer-output-zotero
 bibliography: refs.bib
 date: 2024-05-17
+other-links:
+  - text: Send mig en mail
+    icon: envelope
+    href: mailto:hej@aleksanderbl.dk
+  - text: politica-w-ibid.csl
+    icon: download
+    href: https://github.com/aleksanderbl29/styles/blob/79186cf2cabe963d9863438be4efaf5b5ac41131/politica-w-ibid.csl
+  - text: politica.csl
+    icon: download
+    href: https://github.com/aleksanderbl29/styles/blob/79186cf2cabe963d9863438be4efaf5b5ac41131/politica.csl
 ---
 
 ## Baggrund
