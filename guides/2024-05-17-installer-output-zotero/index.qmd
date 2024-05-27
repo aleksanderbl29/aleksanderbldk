@@ -2,6 +2,7 @@
 title: Sådan installerer du et nyt output-format i Zotero
 description: En kort guide til installation af Politica output format
 categories: [Zotero]
+image: images/zotero-logo-light.jpg
 citation:
   url: https://aleksanderbl.dk/guides/2024-05-17-installer-output-zotero
 bibliography: refs.bib
