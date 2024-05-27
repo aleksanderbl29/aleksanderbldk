@@ -15,3 +15,5 @@ author: "Aleksander Bang-Larsen"
 language:
   appendix-attribution-bibtex: "Henvis til denne guide som:"
   appendix-attribution-cite-as: "BibTeX henvisning:"
+
+anchor-sections: true
