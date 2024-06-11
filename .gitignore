@@ -20,6 +20,10 @@ mono_crash.*
 ## Rendered website
 docs/
 
+## Preview artefacts
+index_cache/
+index_files/
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
