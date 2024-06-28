@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Aleksander Bang-Larsen">
+<meta name="description" content="En gennemgang af, hvordan jeg skrev mit bachelorprojekt med Quarto, R og Zotero">
 
-<title>Aleksander Bang-Larsen - Siden findes ikke</title>
+<title>Aleksander Bang-Larsen - Sådan skriver du en bachelor med Quarto og R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +25,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="/site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="/site_libs/quarto-nav/headroom.min.js"></script>
-<script src="/site_libs/clipboard/clipboard.min.js"></script>
-<script src="/site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="/site_libs/quarto-search/fuse.min.js"></script>
-<script src="/site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="/">
-<script src="/site_libs/quarto-html/quarto.js"></script>
-<script src="/site_libs/quarto-html/popper.min.js"></script>
-<script src="/site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="/site_libs/quarto-html/anchor.min.js"></script>
-<link href="/site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="/site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="/site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="/site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="/site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="/site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="/site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -71,19 +73,19 @@ ul.task-list li input[type="checkbox"] {
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<meta property="og:title" content="Aleksander Bang-Larsen - Siden findes ikke">
-<meta property="og:description" content="">
+<meta property="og:title" content="Aleksander Bang-Larsen - Sådan skriver du en bachelor med Quarto og R">
+<meta property="og:description" content="En gennemgang af, hvordan jeg skrev mit bachelorprojekt med Quarto, R og Zotero">
 <meta property="og:site_name" content="Aleksander Bang-Larsen">
 </head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="/index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Aleksander Bang-Larsen</span>
     </a>
   </div>
@@ -94,12 +96,12 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="/index.html"> <i class="bi bi-house-door-fill" role="img">
+    <a class="nav-link" href="../../index.html"> <i class="bi bi-house-door-fill" role="img">
 </i> 
 <span class="menu-text">Forside</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="/guides.html"> 
+    <a class="nav-link" href="../../guides.html"> 
 <span class="menu-text">Guides</span></a>
   </li>  
   <li class="nav-item">
@@ -108,11 +110,11 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">CV</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="/cv.html"> 
+    <a class="nav-link" href="../../cv.html"> 
 <span class="menu-text">Quarto CV</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="/about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">Om mig</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -150,40 +152,94 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Sådan skriver du en bachelor med Quarto og R</h1>
+                  <div>
+        <div class="description">
+          En gennemgang af, hvordan jeg skrev mit bachelorprojekt med Quarto, R og Zotero
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">Zotero</div>
+                <div class="quarto-category">R</div>
+                <div class="quarto-category">Quarto</div>
+                <div class="quarto-category">BibTex</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Forfatter</div>
+      <div class="quarto-title-meta-contents">
+               <p>Aleksander Bang-Larsen </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Udgivet</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">30. juni 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">På denne side</h2>
+   
+  <ul>
+  <li><a href="#indholdsfortegnelse" id="toc-indholdsfortegnelse" class="nav-link active" data-scroll-target="#indholdsfortegnelse">Indholdsfortegnelse</a></li>
+  <li><a href="#litteraturliste" id="toc-litteraturliste" class="nav-link" data-scroll-target="#litteraturliste">Litteraturliste</a>
+  <ul class="collapse">
+  <li><a href="#kort" id="toc-kort" class="nav-link" data-scroll-target="#kort">Kort</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Siden findes ikke</h1>
-</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
 
 
-</header>
+<p>Sådan skriver du en bachelor med quarto</p>
+<p>En bachelor på IFSK skal indeholde:</p>
+<section id="indholdsfortegnelse" class="level1">
+<h1>Indholdsfortegnelse</h1>
+</section>
+<section id="litteraturliste" class="level1">
+<h1>Litteraturliste</h1>
+<section id="kort" class="level2">
+<h2 class="anchored" data-anchor-id="kort">Kort</h2>
+<p>Jeg har lavet danmarkskort i forbindelse med min opgave. Det har jeg skrevet <a href="../../guides/2024-05-19-danmarkskort-i-r/index.html">en guide om</a></p>
 
 
-<p>Hov!</p>
-<p>Der er vidst gået noget galt. Prøv at gå tilbage til <a href="/./index.html">forsiden</a></p>
+</section>
+</section>
 
-
-
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citat</h2><div><div class="quarto-appendix-secondary-label">Henvis til denne guide som:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang-larsen2024,
+  author = {Bang-Larsen, Aleksander},
+  title = {Sådan skriver du en bachelor med Quarto og R},
+  date = {2024-06-30},
+  url = {https://aleksanderbl.dk/guides/2024-06-30-skriv-bachelor-med-quarto},
+  langid = {da}
+}
+</code><button title="Kopier til udklipsholder" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">BibTeX henvisning:</div><div id="ref-bang-larsen2024" class="csl-entry quarto-appendix-citeas" role="listitem">
+Bang-Larsen, Aleksander. 2024. <span>“Sådan skriver du en bachelor med
+Quarto og R.”</span> June 30, 2024. <a href="https://aleksanderbl.dk/guides/2024-06-30-skriv-bachelor-med-quarto">https://aleksanderbl.dk/guides/2024-06-30-skriv-bachelor-med-quarto</a>.
+</div></div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -611,5 +667,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<script src="/site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

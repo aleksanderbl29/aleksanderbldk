@@ -75,6 +75,7 @@ ul.task-list li input[type="checkbox"] {
 
 <meta property="og:title" content="Aleksander Bang-Larsen - Sådan installerer du et nyt output-format i Zotero">
 <meta property="og:description" content="En kort guide til installation af Politica output format">
+<meta property="og:image" content="https://aleksanderbl.dk/guides/2024-05-17-installer-output-zotero/images/zotero-logo-light.jpg">
 <meta property="og:site_name" content="Aleksander Bang-Larsen">
 </head>
 
@@ -108,6 +109,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="https://cv.aleksanderbl.dk" target="_blank"> <i class="bi bi-file-earmark-person-fill" role="img">
 </i> 
 <span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv.html"> 
+<span class="menu-text">Quarto CV</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../about.html"> 
@@ -193,11 +198,26 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#baggrund" id="toc-baggrund" class="nav-link active" data-scroll-target="#baggrund">Baggrund</a></li>
+  <li><a href="#ting-du-skal-igennem" id="toc-ting-du-skal-igennem" class="nav-link" data-scroll-target="#ting-du-skal-igennem">Ting du skal igennem</a></li>
+  <li><a href="#download-og-placering-af-csl-filer" id="toc-download-og-placering-af-csl-filer" class="nav-link" data-scroll-target="#download-og-placering-af-csl-filer">Download og placering af csl-filer</a>
+  <ul class="collapse">
+  <li><a href="#hvad-er-forskellen-på-politica-og-politica-w-ibid" id="toc-hvad-er-forskellen-på-politica-og-politica-w-ibid" class="nav-link" data-scroll-target="#hvad-er-forskellen-på-politica-og-politica-w-ibid">Hvad er forskellen på <code>politica</code> og <code>politica-w-ibid</code>?</a></li>
+  </ul></li>
+  <li><a href="#installation-af-output" id="toc-installation-af-output" class="nav-link" data-scroll-target="#installation-af-output">Installation af output</a></li>
+  <li><a href="#brug-af-output" id="toc-brug-af-output" class="nav-link" data-scroll-target="#brug-af-output">Brug af output</a>
+  <ul class="collapse">
+  <li><a href="#word" id="toc-word" class="nav-link" data-scroll-target="#word">Word</a></li>
+  </ul></li>
+  <li><a href="#faq" id="toc-faq" class="nav-link" data-scroll-target="#faq">FAQ</a>
+  <ul class="collapse">
+  <li><a href="#jeg-har-fundet-en-fejl-i-outputtet---hvad-gør-jeg" id="toc-jeg-har-fundet-en-fejl-i-outputtet---hvad-gør-jeg" class="nav-link" data-scroll-target="#jeg-har-fundet-en-fejl-i-outputtet---hvad-gør-jeg">Jeg har fundet en fejl i outputtet - Hvad gør jeg?</a></li>
+  <li><a href="#hvorfor-kan-jeg-ikke-bare-downloade-output-stilen-inde-i-zotero-som-man-kan-med-andre" id="toc-hvorfor-kan-jeg-ikke-bare-downloade-output-stilen-inde-i-zotero-som-man-kan-med-andre" class="nav-link" data-scroll-target="#hvorfor-kan-jeg-ikke-bare-downloade-output-stilen-inde-i-zotero-som-man-kan-med-andre">Hvorfor kan jeg ikke bare downloade output-stilen inde i Zotero som man kan med andre?</a></li>
+  </ul></li>
   </ul>
-</nav>
+<div class="quarto-other-links"><h2>Andre links</h2><ul><li><a href="mailto:hej@aleksanderbl.dk"><i class="bi bi-envelope"></i>Send mig en mail</a></li><li><a href="https://github.com/aleksanderbl29/styles/blob/79186cf2cabe963d9863438be4efaf5b5ac41131/politica-w-ibid.csl"><i class="bi bi-download"></i>politica-w-ibid.csl</a></li><li><a href="https://github.com/aleksanderbl29/styles/blob/79186cf2cabe963d9863438be4efaf5b5ac41131/politica.csl"><i class="bi bi-download"></i>politica.csl</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
 
 
 
@@ -205,9 +225,76 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="baggrund" class="level2">
 <h2 class="anchored" data-anchor-id="baggrund">Baggrund</h2>
-<p>Denne guide er beregnet til personer der er blevet vist hertil og har fået tilsendt mit speciallavede politica-output til Zotero. Her vil du finde vejledning til, hvordan du importerer og bruger den med dine henvisninger.</p>
+<p>Denne guide er beregnet til dig, der er interesseret i, hvordan man installerer et <em>custom</em> output i Zotero. Måske er du blevet henvist hertil er blevet vist hertil og har fået tilsendt mit speciallavede politica-output til Zotero. Her vil du finde vejledning til, hvordan du importerer og bruger den med dine henvisninger.</p>
+<p>Denne guide tager udgangspunkt i, at du allerede har Zotero 6 installeret. Du kan downloade Zotero på programmets <a href="https://www.zotero.org/download/">hjemmeside</a>.</p>
+</section>
+<section id="ting-du-skal-igennem" class="level2">
+<h2 class="anchored" data-anchor-id="ting-du-skal-igennem">Ting du skal igennem</h2>
+<ul>
+<li>Downloade csl filer og placere et smart sted (f.eks. sammen med zotero)</li>
+<li>Installere output-formatet</li>
+<li>Vælge det som default output</li>
+<li>Bruge output i word</li>
+</ul>
+</section>
+<section id="download-og-placering-af-csl-filer" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="download-og-placering-af-csl-filer">Download og placering af csl-filer</h2>
+<p>Du skal sørge for, at filerne ligger et sted, hvor du kan finde dem. Jeg har mine til at ligge i OneDrive sammen med mine andre dokumenter.</p>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/filer-light.png" class="img-fluid figure-img" data-cap-location="margin"></p>
+<figcaption>De to filer der skal gemmes</figcaption>
+</figure>
+</div>
+</div></div><p>Hvis du ikke allerede har fået tilsendt <code>csl</code> filerne, kan du hente dem ude til højre.</p>
+<section id="hvad-er-forskellen-på-politica-og-politica-w-ibid" class="level3">
+<h3 class="anchored" data-anchor-id="hvad-er-forskellen-på-politica-og-politica-w-ibid">Hvad er forskellen på <code>politica</code> og <code>politica-w-ibid</code>?</h3>
+<p><code>politica.csl</code> er den stil du skal bruge, hvis du ikke ønsker at Zotero laver <em>ibid</em> automatisk eller du ønsker manuelt at skrive ibid. <code>politica-w-ibid.csl</code> er den stil du skal bruge, hvis du ønsker at Zotero automatisk indsætter <em>ibid</em> når du bruger den samme reference to gange i træk; og tæt på hinanden.</p>
+</section>
+</section>
+<section id="installation-af-output" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="installation-af-output">Installation af output</h2>
+<p>For at installere output-stilen skal du blot dobbeltklikke på <code>csl</code> filen på dit drev. Så får du denne besked op:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/output-install.png" class="img-fluid figure-img" data-cap-location="margin"></p>
+<figcaption>Sådan skal det se ud, når du prøver at installere output</figcaption>
+</figure>
+</div>
+<p>Her skal du trykke <code>Install</code> og så vil stilen automatisk installeres. Det skal du gentage for alle de output-stiler du vil installere.</p>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Hint: Du kan tjekke de output-stiler der er installeret ved at gå i <code>Settings</code> og under <code>Cite</code> er alle tilgængelige output-stile listet.</p>
+</div></div></section>
+<section id="brug-af-output" class="level2">
+<h2 class="anchored" data-anchor-id="brug-af-output">Brug af output</h2>
+<section id="word" class="level3">
+<h3 class="anchored" data-anchor-id="word">Word</h3>
+</section>
+</section>
+<section id="faq" class="level2">
+<h2 class="anchored" data-anchor-id="faq">FAQ</h2>
+<section id="jeg-har-fundet-en-fejl-i-outputtet---hvad-gør-jeg" class="level3">
+<h3 class="anchored" data-anchor-id="jeg-har-fundet-en-fejl-i-outputtet---hvad-gør-jeg">Jeg har fundet en fejl i outputtet - Hvad gør jeg?</h3>
+<ul>
+<li>Hvis du har fundet en fejl i en af de styles jeg har produceret kan du sende mig en mail eller tage fat på mig <em>IRL</em> eller på diverse sociale medier.</li>
+<li>Hvis der er tale om en fejlimplementering i forhold til <a href="https://politica.dk/bidrag-til-politica/skrivevejledning-for-politica/">skrivevejledningen fra politica</a> retter jeg den med glæde.
+<ul>
+<li>Ellers kan vi tale om at producere en stil der passer til dine ønsker.</li>
+</ul></li>
+<li>Når du kontakter mig vedrørende en fejl er det en god ide at sende din csl-fil med; det gør det nemlig nememre at finde ud af, hvad fejlen er og hvor den findes.</li>
+</ul>
+</section>
+<section id="hvorfor-kan-jeg-ikke-bare-downloade-output-stilen-inde-i-zotero-som-man-kan-med-andre" class="level3">
+<h3 class="anchored" data-anchor-id="hvorfor-kan-jeg-ikke-bare-downloade-output-stilen-inde-i-zotero-som-man-kan-med-andre">Hvorfor kan jeg ikke bare downloade output-stilen inde i Zotero som man kan med andre?</h3>
+<ul>
+<li>Jeg arbejder på at få denne output-stil integreret i den primære downloadside, men det kræver at CSL-projektet vil acceptere den. Du kan læse mere om, hvad det kræver <a href="https://github.com/citation-style-language/styles/blob/master/README.md#criteria-for-inclusion">her</a>.</li>
+</ul>
 
 
+</section>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citat</h2><div><div class="quarto-appendix-secondary-label">Henvis til denne guide som:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang-larsen2024,

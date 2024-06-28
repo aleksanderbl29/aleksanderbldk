@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Aleksander Bang-Larsen</title>
+<link>https://aleksanderbl.dk/guides.html</link>
+<atom:link href="https://aleksanderbl.dk/guides.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<generator>quarto-1.4.557</generator>
+<lastBuildDate>Sun, 30 Jun 2024 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Sådan skriver du en bachelor med Quarto og R</title>
+  <dc:creator>Aleksander Bang-Larsen</dc:creator>
+  <link>https://aleksanderbl.dk/guides/2024-06-30-skriv-bachelor-med-quarto/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<p>Sådan skriver du en bachelor med quarto</p>
+<p>En bachelor på IFSK skal indeholde:</p>
+<section id="indholdsfortegnelse" class="level1">
+<h1>Indholdsfortegnelse</h1>
+</section>
+<section id="litteraturliste" class="level1">
+<h1>Litteraturliste</h1>
+<section id="kort" class="level2">
+<h2 class="anchored" data-anchor-id="kort">Kort</h2>
+<p>Jeg har lavet danmarkskort i forbindelse med min opgave. Det har jeg skrevet <a href="../../guides/2024-05-19-danmarkskort-i-r/index.html">en guide om</a></p>
+
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citat</h2><div><div class="quarto-appendix-secondary-label">Henvis til denne guide som:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang-larsen2024,
+  author = {Bang-Larsen, Aleksander},
+  title = {Sådan skriver du en bachelor med Quarto og R},
+  date = {2024-06-30},
+  url = {https://aleksanderbl.dk/guides/2024-06-30-skriv-bachelor-med-quarto},
+  langid = {da}
+}
+</code></pre><div class="quarto-appendix-secondary-label">BibTeX henvisning:</div><div id="ref-bang-larsen2024" class="csl-entry quarto-appendix-citeas">
+Bang-Larsen, Aleksander. 2024. <span>“Sådan skriver du en bachelor med
+Quarto og R.”</span> June 30, 2024. <a href="https://aleksanderbl.dk/guides/2024-06-30-skriv-bachelor-med-quarto">https://aleksanderbl.dk/guides/2024-06-30-skriv-bachelor-med-quarto</a>.
+</div></div></section></div> ]]></description>
+  <category>Zotero</category>
+  <category>R</category>
+  <category>Quarto</category>
+  <category>BibTex</category>
+  <guid>https://aleksanderbl.dk/guides/2024-06-30-skriv-bachelor-med-quarto/</guid>
+  <pubDate>Sun, 30 Jun 2024 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Nemt Danmarkskort i R</title>
+  <dc:creator>Aleksander Bang-Larsen</dc:creator>
+  <link>https://aleksanderbl.dk/guides/2024-05-19-danmarkskort-i-r/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="baggrund" class="level2">
+<h2 class="anchored" data-anchor-id="baggrund">Baggrund</h2>
+<p>Da jeg skulle lære at lave kort i R, lavede jeg et par hurtige googlesøgninger, hvor jeg kom frem til en god guide lavet af Mikkel Freltoft <span class="citation" data-cites="krogsholm2021">Krogsholm (2021)</span>. Jeg opdagede dog hurtigt, at guiden er out-of-date - og derfor skriver jeg denne guide.</p>
+</section>
+<section id="pakker" class="level2">
+<h2 class="anchored" data-anchor-id="pakker">Pakker</h2>
+<p>I R-universet findes der flere pakker til at arbejde med kort. Jeg har valgt at bruge <code>sf</code>som den pakke jeg sætter mig ind i, hvad kan. De fleste kan grundlæggende det samme og er bygget op omkring <code>geometry</code>, der er den kolonne (eller variabel) i en dataframe, der indeholder figurerne til kortet.</p>
+<p>Først indlæser vi alle pakker der skal bruges.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(tidyverse)      <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Her får vi %&gt;%, ggplot2 og andre smarte funktioner.</span></span>
+<span id="cb1-2"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">library</span>(sf)             <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Skal bruges til at arbejde med "simple features" (figurer).</span></span></code></pre></div>
+</div>
+</section>
+<section id="data" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>For at tegne et præcist danmarkskort kan vi hente <code>geojson</code> data fra <a href="https://sdfi.dk/">Styrelsen for Dataforsyning og Infrastruktur</a>. De udstiller en udmærket <code>API</code> der kan levere kortdata til os. For at vi kan benytte en <code>API</code> i <code>R</code> skal vi først definere et <code>URL</code> og dernæst bede om at downloade den fil der hører til på den hjemmeside.</p>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Du behøver <em>ikke</em> at vide hvad en <code>API</code> er for at kunne gennemføre denne guide.</p>
+</div></div><ol type="1">
+<li>Først definerer vi <code>API</code>ens <code>URL</code>.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><span class="do" style="color: #5E5E5E;
+background-color: null;
+font-style: italic;">## Gemmer URL til API-kald</span></span>
+<span id="cb2-2">url <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"https://api.dataforsyningen.dk/afstemningsomraader?format=geojson"</span></span></code></pre></div>
+</div>
+<ol start="2" type="1">
+<li>Dernæst beder vi <code>R</code> om at downloade den efterspurgte fil til en midlertidig placering i computerens hukommelse.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Skaber midlertidig fil</span></span>
+<span id="cb3-2">geofile <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">tempfile</span>()</span>
+<span id="cb3-3"></span>
+<span id="cb3-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Henter geojson til tempfile</span></span>
+<span id="cb3-5"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">download.file</span>(url, geofile)</span></code></pre></div>
+</div>
+<p>Vi bruger funktionen <code>download.file()</code> og giver den <code>API</code>ens <code>URL</code> og den midlertidige dataplacering, hvor vi ønsker dataene hentet til.</p>
+<ol start="3" type="1">
+<li>Til sidst omformer vi <code>geoJSON</code> til et <code>sf</code> format som <code>R</code> kan forstå.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Læser datafilen ind i R</span></span>
+<span id="cb4-2">geodata_st <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">st_read</span>(geofile)</span>
+<span id="cb4-3">afstemningssteder_geodata <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">st_as_sf</span>(geodata_st)</span></code></pre></div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Her omformes først til <code>st</code> og dernæst til <code>sf</code>.</p>
+</div></div><p>Nu har vi en dataframe i <code>afstemningssteder_geodata</code> der indeholder de figurer vi skal bruge for at lave et danmarkskort!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1">vind_afstemningssteder_geodata <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> rmapshaper<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ms_simplify</span>(vind_afstemningssteder_geodata, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">keep =</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.01</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">keep_shapes =</span> <span class="cn" style="color: #8f5902;
+background-color: null;
+font-style: inherit;">TRUE</span>)</span>
+<span id="cb5-2"></span>
+<span id="cb5-3">aarhus_afstemningssteder <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> vind_afstemningssteder_geodata <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb5-4">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">filter</span>(kommunenavn <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Aarhus"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%&gt;%</span></span>
+<span id="cb5-5">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">aes</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">fill =</span> navn)) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb5-6">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_sf</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb5-7">  ggthemes<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme_map</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb5-8">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">legend.position =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"none"</span>)</span>
+<span id="cb5-9"></span>
+<span id="cb5-10">bw_afstemningssteder <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ggplot</span>(vind_afstemningssteder_geodata) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb5-11">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">geom_sf</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb5-12">  ggthemes<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">::</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme_map</span>() <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb5-13">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">labs</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">title =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Afstemningssteder i Danmark"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">caption =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Kilde: DAWA/DAGI"</span>) <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb5-14">  <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">theme</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">legend.position =</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"none"</span>, <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">title =</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">element_text</span>(<span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">size =</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>))</span></code></pre></div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Her indlæser vi <code>rmapshaper::ms_simplify()</code> med pakkens navn for at slippe for at indlæse hele pakken - Vi skal nemlig ikke bruge det hele! Det samme har vi gjort med <code>ggthemes::theme_map()</code>, fordi der kun skal bruges det ene <em>theme</em></p>
+</div></div><div class="cell">
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1">aarhus_afstemningssteder</span>
+<span id="cb6-2">bw_afstemningssteder</span></code></pre></div>
+</div>
+</section>
+<section id="samlet-kode" class="level2">
+<h2 class="anchored" data-anchor-id="samlet-kode">Samlet kode</h2>
+<p>Alt hvad jeg har gennemgået i denne guide kan findes i et samlet <code>r</code>-script <a href="https://github.com/aleksanderbl29/aleksanderbldk/blob/main/guides/2024-06-29-danmarkskort-i-r/kort.r">på min github</a>.</p>
+</section>
+<section id="gammelt-kode" class="level2">
+<h2 class="anchored" data-anchor-id="gammelt-kode">Gammelt kode</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">log_info</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Starter download af geoJSON"</span>)</span>
+<span id="cb7-2">starttid <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">Sys.time</span>()</span>
+<span id="cb7-3"></span>
+<span id="cb7-4">sluttid <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">Sys.time</span>()</span>
+<span id="cb7-5"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">log_info</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"GeoJSON downloadet"</span>)</span>
+<span id="cb7-6"></span>
+<span id="cb7-7">download_tid <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">&lt;-</span> sluttid <span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> starttid</span>
+<span id="cb7-8"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">log_info</span>(<span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">paste</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Det tog"</span>, <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">round</span>(download_tid, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>), <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"minutter at downloade"</span>))</span>
+<span id="cb7-9"></span>
+<span id="cb7-10"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># sf_use_s2(FALSE)</span></span></code></pre></div>
+</div>
+
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referencer</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0">
+<div id="ref-krogsholm2021" class="csl-entry">
+Krogsholm, Mikkel Freltoft. 2021. <span>“Easy Maps of <span>Denmark</span> in <span>R</span> <span></span> <span>LinkedIn</span>”</span>. https://www.linkedin.com/pulse/easy-maps-denmark-r-mikkel-freltoft-krogsholm/.
+</div>
+</div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citat</h2><div><div class="quarto-appendix-secondary-label">Henvis til denne guide som:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang-larsen2024,
+  author = {Bang-Larsen, Aleksander},
+  title = {Nemt Danmarkskort i R},
+  date = {2024-06-29},
+  url = {https://aleksanderbl.dk/guides/2024-05-19-danmarkskort-i-r},
+  langid = {da}
+}
+</code></pre><div class="quarto-appendix-secondary-label">BibTeX henvisning:</div><div id="ref-bang-larsen2024" class="csl-entry quarto-appendix-citeas">
+Bang-Larsen, Aleksander. 2024. <span>“Nemt Danmarkskort i R.”</span>
+June 29, 2024. <a href="https://aleksanderbl.dk/guides/2024-05-19-danmarkskort-i-r">https://aleksanderbl.dk/guides/2024-05-19-danmarkskort-i-r</a>.
+</div></div></section></div> ]]></description>
+  <guid>https://aleksanderbl.dk/guides/2024-05-19-danmarkskort-i-r/</guid>
+  <pubDate>Sat, 29 Jun 2024 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Sådan installerer du et nyt output-format i Zotero</title>
+  <dc:creator>Aleksander Bang-Larsen</dc:creator>
+  <link>https://aleksanderbl.dk/guides/2024-05-17-installer-output-zotero/</link>
+  <description><![CDATA[ 
+
+
+
+
+
+<section id="baggrund" class="level2">
+<h2 class="anchored" data-anchor-id="baggrund">Baggrund</h2>
+<p>Denne guide er beregnet til dig, der er interesseret i, hvordan man installerer et <em>custom</em> output i Zotero. Måske er du blevet henvist hertil er blevet vist hertil og har fået tilsendt mit speciallavede politica-output til Zotero. Her vil du finde vejledning til, hvordan du importerer og bruger den med dine henvisninger.</p>
+<p>Denne guide tager udgangspunkt i, at du allerede har Zotero 6 installeret. Du kan downloade Zotero på programmets <a href="https://www.zotero.org/download/">hjemmeside</a>.</p>
+</section>
+<section id="ting-du-skal-igennem" class="level2">
+<h2 class="anchored" data-anchor-id="ting-du-skal-igennem">Ting du skal igennem</h2>
+<ul>
+<li>Downloade csl filer og placere et smart sted (f.eks. sammen med zotero)</li>
+<li>Installere output-formatet</li>
+<li>Vælge det som default output</li>
+<li>Bruge output i word</li>
+</ul>
+</section>
+<section id="download-og-placering-af-csl-filer" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="download-og-placering-af-csl-filer">Download og placering af csl-filer</h2>
+<p>Du skal sørge for, at filerne ligger et sted, hvor du kan finde dem. Jeg har mine til at ligge i OneDrive sammen med mine andre dokumenter.</p>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://aleksanderbl.dk/guides/2024-05-17-installer-output-zotero/images/filer-light.png" class="img-fluid figure-img" data-cap-location="margin"></p>
+<figcaption>De to filer der skal gemmes</figcaption>
+</figure>
+</div>
+</div></div><p>Hvis du ikke allerede har fået tilsendt <code>csl</code> filerne, kan du hente dem ude til højre.</p>
+<section id="hvad-er-forskellen-på-politica-og-politica-w-ibid" class="level3">
+<h3 class="anchored" data-anchor-id="hvad-er-forskellen-på-politica-og-politica-w-ibid">Hvad er forskellen på <code>politica</code> og <code>politica-w-ibid</code>?</h3>
+<p><code>politica.csl</code> er den stil du skal bruge, hvis du ikke ønsker at Zotero laver <em>ibid</em> automatisk eller du ønsker manuelt at skrive ibid. <code>politica-w-ibid.csl</code> er den stil du skal bruge, hvis du ønsker at Zotero automatisk indsætter <em>ibid</em> når du bruger den samme reference to gange i træk; og tæt på hinanden.</p>
+</section>
+</section>
+<section id="installation-af-output" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="installation-af-output">Installation af output</h2>
+<p>For at installere output-stilen skal du blot dobbeltklikke på <code>csl</code> filen på dit drev. Så får du denne besked op:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://aleksanderbl.dk/guides/2024-05-17-installer-output-zotero/images/output-install.png" class="img-fluid figure-img" data-cap-location="margin"></p>
+<figcaption>Sådan skal det se ud, når du prøver at installere output</figcaption>
+</figure>
+</div>
+<p>Her skal du trykke <code>Install</code> og så vil stilen automatisk installeres. Det skal du gentage for alle de output-stiler du vil installere.</p>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Hint: Du kan tjekke de output-stiler der er installeret ved at gå i <code>Settings</code> og under <code>Cite</code> er alle tilgængelige output-stile listet.</p>
+</div></div></section>
+<section id="brug-af-output" class="level2">
+<h2 class="anchored" data-anchor-id="brug-af-output">Brug af output</h2>
+<section id="word" class="level3">
+<h3 class="anchored" data-anchor-id="word">Word</h3>
+</section>
+</section>
+<section id="faq" class="level2">
+<h2 class="anchored" data-anchor-id="faq">FAQ</h2>
+<section id="jeg-har-fundet-en-fejl-i-outputtet---hvad-gør-jeg" class="level3">
+<h3 class="anchored" data-anchor-id="jeg-har-fundet-en-fejl-i-outputtet---hvad-gør-jeg">Jeg har fundet en fejl i outputtet - Hvad gør jeg?</h3>
+<ul>
+<li>Hvis du har fundet en fejl i en af de styles jeg har produceret kan du sende mig en mail eller tage fat på mig <em>IRL</em> eller på diverse sociale medier.</li>
+<li>Hvis der er tale om en fejlimplementering i forhold til <a href="https://politica.dk/bidrag-til-politica/skrivevejledning-for-politica/">skrivevejledningen fra politica</a> retter jeg den med glæde.
+<ul>
+<li>Ellers kan vi tale om at producere en stil der passer til dine ønsker.</li>
+</ul></li>
+<li>Når du kontakter mig vedrørende en fejl er det en god ide at sende din csl-fil med; det gør det nemlig nememre at finde ud af, hvad fejlen er og hvor den findes.</li>
+</ul>
+</section>
+<section id="hvorfor-kan-jeg-ikke-bare-downloade-output-stilen-inde-i-zotero-som-man-kan-med-andre" class="level3">
+<h3 class="anchored" data-anchor-id="hvorfor-kan-jeg-ikke-bare-downloade-output-stilen-inde-i-zotero-som-man-kan-med-andre">Hvorfor kan jeg ikke bare downloade output-stilen inde i Zotero som man kan med andre?</h3>
+<ul>
+<li>Jeg arbejder på at få denne output-stil integreret i den primære downloadside, men det kræver at CSL-projektet vil acceptere den. Du kan læse mere om, hvad det kræver <a href="https://github.com/citation-style-language/styles/blob/master/README.md#criteria-for-inclusion">her</a>.</li>
+</ul>
+
+
+</section>
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citat</h2><div><div class="quarto-appendix-secondary-label">Henvis til denne guide som:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang-larsen2024,
+  author = {Bang-Larsen, Aleksander},
+  title = {Sådan installerer du et nyt output-format i Zotero},
+  date = {2024-05-17},
+  url = {https://aleksanderbl.dk/guides/2024-05-17-installer-output-zotero},
+  langid = {da}
+}
+</code></pre><div class="quarto-appendix-secondary-label">BibTeX henvisning:</div><div id="ref-bang-larsen2024" class="csl-entry quarto-appendix-citeas">
+Bang-Larsen, Aleksander. 2024. <span>“Sådan installerer du et nyt
+output-format i Zotero.”</span> May 17, 2024. <a href="https://aleksanderbl.dk/guides/2024-05-17-installer-output-zotero">https://aleksanderbl.dk/guides/2024-05-17-installer-output-zotero</a>.
+</div></div></section></div> ]]></description>
+  <category>Zotero</category>
+  <guid>https://aleksanderbl.dk/guides/2024-05-17-installer-output-zotero/</guid>
+  <pubDate>Fri, 17 May 2024 00:00:00 GMT</pubDate>
+  <media:content url="https://aleksanderbl.dk/guides/2024-05-17-installer-output-zotero/images/zotero-logo-light.jpg" medium="image" type="image/jpeg"/>
+</item>
+</channel>
+</rss>

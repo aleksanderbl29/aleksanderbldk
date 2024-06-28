@@ -1,52 +1,45 @@
 [
   {
-    "objectID": "guides.html",
-    "href": "guides.html",
-    "title": "Guides",
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "Om mig",
     "section": "",
-    "text": "Denne side vil indeholde de guides jeg skriver"
+    "text": "Jeg er statskundsksabsstuderende med en stor interesse for kvantitative metoder og vælgeradfærd.\nUdover mine studier bruger jeg meget tid på at lære nye ting, og jeg har viden indenfor mange teknologiske emner."
   },
   {
-    "objectID": "guides/2024-05-17-installer-output-zotero/index.html",
-    "href": "guides/2024-05-17-installer-output-zotero/index.html",
-    "title": "Sådan installerer du et nyt output-format i Zotero",
-    "section": "",
-    "text": "Denne guide er beregnet til personer der er blevet vist hertil og har fået tilsendt mit speciallavede politica-output til Zotero. Her vil du finde vejledning til, hvordan du importerer og bruger den med dine henvisninger."
+    "objectID": "cv.html#til-2026-statskundskab-v.-aarhus-universitet",
+    "href": "cv.html#til-2026-statskundskab-v.-aarhus-universitet",
+    "title": "Om mig",
+    "section": "2021 til 2026 — Statskundskab v. Aarhus Universitet",
+    "text": "2021 til 2026 — Statskundskab v. Aarhus Universitet\n\nKandidat — 2024 til 2026\nJeg er i gang med min kandidat i statskundskab på Aarhus Universitet. Her har jeg stort fokus på kvantitative metoder, analyser og visualiseringer samt datascience i politisk kontekst.\n\n\nBachelor — 2021 til 2024\nJeg færdiggjorde i sommeren 2024 min bachelor i statskundskab på Aarhus Universitet. Her havde jeg valgfag om vælgeradfærd og skrev min bacheloropgave i vælgeradfærd og politisk repræsentation. I min bacheloropgave undersøgte jeg spørgsmålet: Hvordan er vælgernes elektorale reaktion på opførslen af vindmøller i lokalområdet. For den opnåede jeg karakteren X."
   },
   {
-    "objectID": "guides/2024-05-17-installer-output-zotero/index.html#baggrund",
-    "href": "guides/2024-05-17-installer-output-zotero/index.html#baggrund",
-    "title": "Sådan installerer du et nyt output-format i Zotero",
-    "section": "",
-    "text": "Denne guide er beregnet til personer der er blevet vist hertil og har fået tilsendt mit speciallavede politica-output til Zotero. Her vil du finde vejledning til, hvordan du importerer og bruger den med dine henvisninger."
+    "objectID": "cv.html#til-2020-studentereksamen-fra-herning-gymnasium",
+    "href": "cv.html#til-2020-studentereksamen-fra-herning-gymnasium",
+    "title": "Om mig",
+    "section": "2017 til 2020 — Studentereksamen fra Herning Gymnasium",
+    "text": "2017 til 2020 — Studentereksamen fra Herning Gymnasium\nJeg har min studentereksamen fra Herning Gymnasium. Her havde jeg en samfundssproglig studieretning med samfundsfag A, engelsk A og fransk A som hovedfag."
   },
   {
-    "objectID": "guides/2024-05-19-danmarkskort-i-r/index.html",
-    "href": "guides/2024-05-19-danmarkskort-i-r/index.html",
-    "title": "Nemt Danmarkskort i R",
-    "section": "",
-    "text": "Da jeg skulle lære at lave kort i R, lavede jeg et par hurtige googlesøgninger, hvor jeg kom frem til en god guide lavet af Mikkel Freltoft Krogsholm (2021). Jeg opdagede dog hurtigt, at guiden er out-of-date (hvorfor jeg skriver denne guide)."
+    "objectID": "cv.html#til-nu-underviser-i-excel-og-vba-hos-djøf",
+    "href": "cv.html#til-nu-underviser-i-excel-og-vba-hos-djøf",
+    "title": "Om mig",
+    "section": "2023 til nu — Underviser i Excel og VBA hos Djøf",
+    "text": "2023 til nu — Underviser i Excel og VBA hos Djøf\nUnderviser i Excel og VBA for Djøf Studerende, hvor jeg underviser medlemmer af Djøf Studerende i Excel på fire kursusniveauer samt VBA på to niveauer. Her har jeg fået forbedret mine undervisningskompetencer og er blevet bedste venner med Excel."
   },
   {
-    "objectID": "guides/2024-05-19-danmarkskort-i-r/index.html#baggrund",
-    "href": "guides/2024-05-19-danmarkskort-i-r/index.html#baggrund",
-    "title": "Nemt Danmarkskort i R",
-    "section": "",
-    "text": "Da jeg skulle lære at lave kort i R, lavede jeg et par hurtige googlesøgninger, hvor jeg kom frem til en god guide lavet af Mikkel Freltoft Krogsholm (2021). Jeg opdagede dog hurtigt, at guiden er out-of-date (hvorfor jeg skriver denne guide)."
+    "objectID": "cv.html#til-2023-student-assistant-hos-eg-as",
+    "href": "cv.html#til-2023-student-assistant-hos-eg-as",
+    "title": "Om mig",
+    "section": "2021 til 2023 — Student Assistant hos EG A/S",
+    "text": "2021 til 2023 — Student Assistant hos EG A/S\nAnsat som studentermedhjælper i først kreditor-bogholderiet, og derefter debitor-bogholderiet, i IT-virksomheden EG, hvor jeg indtil studiestart i september 2021 arbejdede fuldtid og herefter deltid ved siden af studiet. Jeg håndterede varierende bogholderi-opgaver i Excel, ERP-systemet NetSuite samt lønningssystemet Zalaris."
   },
   {
-    "objectID": "guides/2024-05-17-quarto-blog/index.html",
-    "href": "guides/2024-05-17-quarto-blog/index.html",
-    "title": "Hvordan laver man en hjemmeside med Quarto?",
-    "section": "",
-    "text": "Hvilke værktøjer skal vi bruge og hvordan spiller de sammen?\n\n\nWhen you’ve written the same code 3 times, write a functionWhen you’ve given the same in-person advice 3 times, write a blog post\n\n— David Robinson (@drob) November 9, 2017"
-  },
-  {
-    "objectID": "guides/2024-05-17-quarto-blog/index.html#overblik",
-    "href": "guides/2024-05-17-quarto-blog/index.html#overblik",
-    "title": "Hvordan laver man en hjemmeside med Quarto?",
-    "section": "",
-    "text": "Hvilke værktøjer skal vi bruge og hvordan spiller de sammen?\n\n\nWhen you’ve written the same code 3 times, write a functionWhen you’ve given the same in-person advice 3 times, write a blog post\n\n— David Robinson (@drob) November 9, 2017"
+    "objectID": "cv.html#til-2021-video-editor-og-ansvarlig-for-webshops-hos-gigantic-aps",
+    "href": "cv.html#til-2021-video-editor-og-ansvarlig-for-webshops-hos-gigantic-aps",
+    "title": "Om mig",
+    "section": "2020 til 2021 — Video Editor og ansvarlig for webshops hos Gigantic ApS",
+    "text": "2020 til 2021 — Video Editor og ansvarlig for webshops hos Gigantic ApS\nI de første 4 måneder af min ansættelse var mine primære opgaver at redigere reklame-indhold til sociale medier for diverse webshops i virksomheden i Shopify. Herefter fik jeg ansvaret for et af virksomhedens webshop-brands, hvor jeg styrede webshops i Danmark, Sverige, Norge og Finland."
   },
   {
     "objectID": "index.html",
@@ -54,5 +47,117 @@
     "title": "Aleksander Bang-Larsen",
     "section": "",
     "text": "Hej! Jeg hedder Aleksander og studerer statskundskab ved Aarhus Universitet.\nHer på siden har jeg samlet mit cv, beretninger om min teknologiske læring og en række guides til at give noget af min læring videre."
+  },
+  {
+    "objectID": "guides/2024-05-19-danmarkskort-i-r/index.html",
+    "href": "guides/2024-05-19-danmarkskort-i-r/index.html",
+    "title": "Nemt Danmarkskort i R",
+    "section": "",
+    "text": "Da jeg skulle lære at lave kort i R, lavede jeg et par hurtige googlesøgninger, hvor jeg kom frem til en god guide lavet af Mikkel Freltoft Krogsholm (2021). Jeg opdagede dog hurtigt, at guiden er out-of-date - og derfor skriver jeg denne guide."
+  },
+  {
+    "objectID": "guides/2024-05-19-danmarkskort-i-r/index.html#baggrund",
+    "href": "guides/2024-05-19-danmarkskort-i-r/index.html#baggrund",
+    "title": "Nemt Danmarkskort i R",
+    "section": "",
+    "text": "Da jeg skulle lære at lave kort i R, lavede jeg et par hurtige googlesøgninger, hvor jeg kom frem til en god guide lavet af Mikkel Freltoft Krogsholm (2021). Jeg opdagede dog hurtigt, at guiden er out-of-date - og derfor skriver jeg denne guide."
+  },
+  {
+    "objectID": "guides/2024-05-19-danmarkskort-i-r/index.html#pakker",
+    "href": "guides/2024-05-19-danmarkskort-i-r/index.html#pakker",
+    "title": "Nemt Danmarkskort i R",
+    "section": "Pakker",
+    "text": "Pakker\nI R-universet findes der flere pakker til at arbejde med kort. Jeg har valgt at bruge sfsom den pakke jeg sætter mig ind i, hvad kan. De fleste kan grundlæggende det samme og er bygget op omkring geometry, der er den kolonne (eller variabel) i en dataframe, der indeholder figurerne til kortet.\nFørst indlæser vi alle pakker der skal bruges.\n\nlibrary(tidyverse)      # Her får vi %&gt;%, ggplot2 og andre smarte funktioner.\nlibrary(sf)             # Skal bruges til at arbejde med \"simple features\" (figurer)."
+  },
+  {
+    "objectID": "guides/2024-05-19-danmarkskort-i-r/index.html#data",
+    "href": "guides/2024-05-19-danmarkskort-i-r/index.html#data",
+    "title": "Nemt Danmarkskort i R",
+    "section": "Data",
+    "text": "Data\nFor at tegne et præcist danmarkskort kan vi hente geojson data fra Styrelsen for Dataforsyning og Infrastruktur. De udstiller en udmærket API der kan levere kortdata til os. For at vi kan benytte en API i R skal vi først definere et URL og dernæst bede om at downloade den fil der hører til på den hjemmeside.\n\n\nDu behøver ikke at vide hvad en API er for at kunne gennemføre denne guide.\n\nFørst definerer vi APIens URL.\n\n\n## Gemmer URL til API-kald\nurl &lt;- \"https://api.dataforsyningen.dk/afstemningsomraader?format=geojson\"\n\n\nDernæst beder vi R om at downloade den efterspurgte fil til en midlertidig placering i computerens hukommelse.\n\n\n# Skaber midlertidig fil\ngeofile &lt;- tempfile()\n\n# Henter geojson til tempfile\ndownload.file(url, geofile)\n\nVi bruger funktionen download.file() og giver den APIens URL og den midlertidige dataplacering, hvor vi ønsker dataene hentet til.\n\nTil sidst omformer vi geoJSON til et sf format som R kan forstå.\n\n\n# Læser datafilen ind i R\ngeodata_st &lt;- st_read(geofile)\nafstemningssteder_geodata &lt;- st_as_sf(geodata_st)\n\n\n\nHer omformes først til st og dernæst til sf.\nNu har vi en dataframe i afstemningssteder_geodata der indeholder de figurer vi skal bruge for at lave et danmarkskort!\n\nvind_afstemningssteder_geodata &lt;- rmapshaper::ms_simplify(vind_afstemningssteder_geodata, keep = 0.01, keep_shapes = TRUE)\n\naarhus_afstemningssteder &lt;- vind_afstemningssteder_geodata %&gt;%\n  filter(kommunenavn == \"Aarhus\") %&gt;%\n  ggplot(aes(fill = navn)) +\n  geom_sf() +\n  ggthemes::theme_map() +\n  theme(legend.position = \"none\")\n\nbw_afstemningssteder &lt;- ggplot(vind_afstemningssteder_geodata) +\n  geom_sf() +\n  ggthemes::theme_map() +\n  labs(title = \"Afstemningssteder i Danmark\", caption = \"Kilde: DAWA/DAGI\") +\n  theme(legend.position = \"none\", title = element_text(size = 20))\n\n\n\nHer indlæser vi rmapshaper::ms_simplify() med pakkens navn for at slippe for at indlæse hele pakken - Vi skal nemlig ikke bruge det hele! Det samme har vi gjort med ggthemes::theme_map(), fordi der kun skal bruges det ene theme\n\naarhus_afstemningssteder\nbw_afstemningssteder"
+  },
+  {
+    "objectID": "guides/2024-05-19-danmarkskort-i-r/index.html#samlet-kode",
+    "href": "guides/2024-05-19-danmarkskort-i-r/index.html#samlet-kode",
+    "title": "Nemt Danmarkskort i R",
+    "section": "Samlet kode",
+    "text": "Samlet kode\nAlt hvad jeg har gennemgået i denne guide kan findes i et samlet r-script på min github."
+  },
+  {
+    "objectID": "guides/2024-05-19-danmarkskort-i-r/index.html#gammelt-kode",
+    "href": "guides/2024-05-19-danmarkskort-i-r/index.html#gammelt-kode",
+    "title": "Nemt Danmarkskort i R",
+    "section": "Gammelt kode",
+    "text": "Gammelt kode\n\nlog_info(\"Starter download af geoJSON\")\nstarttid &lt;- Sys.time()\n\nsluttid &lt;- Sys.time()\nlog_info(\"GeoJSON downloadet\")\n\ndownload_tid &lt;- sluttid - starttid\nlog_info(paste(\"Det tog\", round(download_tid, 3), \"minutter at downloade\"))\n\n# sf_use_s2(FALSE)"
+  },
+  {
+    "objectID": "guides/2024-06-30-skriv-bachelor-med-quarto/index.html",
+    "href": "guides/2024-06-30-skriv-bachelor-med-quarto/index.html",
+    "title": "Sådan skriver du en bachelor med Quarto og R",
+    "section": "",
+    "text": "Sådan skriver du en bachelor med quarto\nEn bachelor på IFSK skal indeholde:"
+  },
+  {
+    "objectID": "guides/2024-06-30-skriv-bachelor-med-quarto/index.html#kort",
+    "href": "guides/2024-06-30-skriv-bachelor-med-quarto/index.html#kort",
+    "title": "Sådan skriver du en bachelor med Quarto og R",
+    "section": "Kort",
+    "text": "Kort\nJeg har lavet danmarkskort i forbindelse med min opgave. Det har jeg skrevet en guide om"
+  },
+  {
+    "objectID": "guides/2024-05-17-installer-output-zotero/index.html",
+    "href": "guides/2024-05-17-installer-output-zotero/index.html",
+    "title": "Sådan installerer du et nyt output-format i Zotero",
+    "section": "",
+    "text": "Denne guide er beregnet til dig, der er interesseret i, hvordan man installerer et custom output i Zotero. Måske er du blevet henvist hertil er blevet vist hertil og har fået tilsendt mit speciallavede politica-output til Zotero. Her vil du finde vejledning til, hvordan du importerer og bruger den med dine henvisninger.\nDenne guide tager udgangspunkt i, at du allerede har Zotero 6 installeret. Du kan downloade Zotero på programmets hjemmeside."
+  },
+  {
+    "objectID": "guides/2024-05-17-installer-output-zotero/index.html#baggrund",
+    "href": "guides/2024-05-17-installer-output-zotero/index.html#baggrund",
+    "title": "Sådan installerer du et nyt output-format i Zotero",
+    "section": "",
+    "text": "Denne guide er beregnet til dig, der er interesseret i, hvordan man installerer et custom output i Zotero. Måske er du blevet henvist hertil er blevet vist hertil og har fået tilsendt mit speciallavede politica-output til Zotero. Her vil du finde vejledning til, hvordan du importerer og bruger den med dine henvisninger.\nDenne guide tager udgangspunkt i, at du allerede har Zotero 6 installeret. Du kan downloade Zotero på programmets hjemmeside."
+  },
+  {
+    "objectID": "guides/2024-05-17-installer-output-zotero/index.html#ting-du-skal-igennem",
+    "href": "guides/2024-05-17-installer-output-zotero/index.html#ting-du-skal-igennem",
+    "title": "Sådan installerer du et nyt output-format i Zotero",
+    "section": "Ting du skal igennem",
+    "text": "Ting du skal igennem\n\nDownloade csl filer og placere et smart sted (f.eks. sammen med zotero)\nInstallere output-formatet\nVælge det som default output\nBruge output i word"
+  },
+  {
+    "objectID": "guides/2024-05-17-installer-output-zotero/index.html#download-og-placering-af-csl-filer",
+    "href": "guides/2024-05-17-installer-output-zotero/index.html#download-og-placering-af-csl-filer",
+    "title": "Sådan installerer du et nyt output-format i Zotero",
+    "section": "Download og placering af csl-filer",
+    "text": "Download og placering af csl-filer\nDu skal sørge for, at filerne ligger et sted, hvor du kan finde dem. Jeg har mine til at ligge i OneDrive sammen med mine andre dokumenter.\n\n\n\n\n\nDe to filer der skal gemmes\n\n\nHvis du ikke allerede har fået tilsendt csl filerne, kan du hente dem ude til højre.\n\nHvad er forskellen på politica og politica-w-ibid?\npolitica.csl er den stil du skal bruge, hvis du ikke ønsker at Zotero laver ibid automatisk eller du ønsker manuelt at skrive ibid. politica-w-ibid.csl er den stil du skal bruge, hvis du ønsker at Zotero automatisk indsætter ibid når du bruger den samme reference to gange i træk; og tæt på hinanden."
+  },
+  {
+    "objectID": "guides/2024-05-17-installer-output-zotero/index.html#installation-af-output",
+    "href": "guides/2024-05-17-installer-output-zotero/index.html#installation-af-output",
+    "title": "Sådan installerer du et nyt output-format i Zotero",
+    "section": "Installation af output",
+    "text": "Installation af output\nFor at installere output-stilen skal du blot dobbeltklikke på csl filen på dit drev. Så får du denne besked op:\n\n\n\nSådan skal det se ud, når du prøver at installere output\n\n\nHer skal du trykke Install og så vil stilen automatisk installeres. Det skal du gentage for alle de output-stiler du vil installere.\n\n\nHint: Du kan tjekke de output-stiler der er installeret ved at gå i Settings og under Cite er alle tilgængelige output-stile listet."
+  },
+  {
+    "objectID": "guides/2024-05-17-installer-output-zotero/index.html#brug-af-output",
+    "href": "guides/2024-05-17-installer-output-zotero/index.html#brug-af-output",
+    "title": "Sådan installerer du et nyt output-format i Zotero",
+    "section": "Brug af output",
+    "text": "Brug af output\n\nWord"
+  },
+  {
+    "objectID": "guides/2024-05-17-installer-output-zotero/index.html#faq",
+    "href": "guides/2024-05-17-installer-output-zotero/index.html#faq",
+    "title": "Sådan installerer du et nyt output-format i Zotero",
+    "section": "FAQ",
+    "text": "FAQ\n\nJeg har fundet en fejl i outputtet - Hvad gør jeg?\n\nHvis du har fundet en fejl i en af de styles jeg har produceret kan du sende mig en mail eller tage fat på mig IRL eller på diverse sociale medier.\nHvis der er tale om en fejlimplementering i forhold til skrivevejledningen fra politica retter jeg den med glæde.\n\nEllers kan vi tale om at producere en stil der passer til dine ønsker.\n\nNår du kontakter mig vedrørende en fejl er det en god ide at sende din csl-fil med; det gør det nemlig nememre at finde ud af, hvad fejlen er og hvor den findes.\n\n\n\nHvorfor kan jeg ikke bare downloade output-stilen inde i Zotero som man kan med andre?\n\nJeg arbejder på at få denne output-stil integreret i den primære downloadside, men det kræver at CSL-projektet vil acceptere den. Du kan læse mere om, hvad det kræver her."
+  },
+  {
+    "objectID": "guides.html",
+    "href": "guides.html",
+    "title": "Guides",
+    "section": "",
+    "text": "Denne side vil indeholde de guides jeg skriver \n\n\n\n\n\n\n   \n     \n     \n       Sorter ved\n       Standard\n         \n          Overskrift\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nSådan skriver du en bachelor med Quarto og R\n\n\nEn gennemgang af, hvordan jeg skrev mit bachelorprojekt med Quarto, R og Zotero\n\n\n\n\n\n\n\n\n\n\n\nNemt Danmarkskort i R\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSådan installerer du et nyt output-format i Zotero\n\n\nEn kort guide til installation af Politica output format\n\n\n\n\n\n\n\nIngen resultater"
   }
 ]
