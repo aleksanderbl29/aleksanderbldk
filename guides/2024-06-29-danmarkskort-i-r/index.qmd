@@ -7,20 +7,24 @@ execute:
   echo: true
   output: false
   cache: true
-  eval: false
 link-external-icon: true
 link-external-newwindow: true
 other-links:
   - text: Samlet script
     icon: code
     href: https://github.com/aleksanderbl29/aleksanderbldk/blob/main/guides/2024-06-29-danmarkskort-i-r/kort.r
-draft: false
+  - text: Mikkel Krogsholms guide
+    # icon: computer-mouse
+    href: https://www.linkedin.com/pulse/easy-maps-denmark-r-mikkel-freltoft-krogsholm/ 
+fig-cap-location: margin
 date: 2024-06-29
 ---
 
 ## Baggrund
 
 Da jeg skulle lære at lave kort i R, lavede jeg et par hurtige googlesøgninger, hvor jeg kom frem til en god guide lavet af Mikkel Freltoft @krogsholm2021. Jeg opdagede dog hurtigt, at guiden er out-of-date - og derfor skriver jeg denne guide.
+
+I denne guide vil jeg gennemgå hvordan man kan skabe et kort over alle afstemningssteders områder i Danmark. Vi vil både producere et kort for Aarhus Kommune (@fig-aarhus) og et kort for alle afstemningsområder i hele Danmark (@fig-dk).
 
 ## Pakker
 
@@ -29,17 +33,22 @@ I R-universet findes der flere pakker til at arbejde med kort. Jeg har valgt at 
 Først indlæser vi alle pakker der skal bruges.
 
 ```{r indlæs-pakker}
+#| cache: false
 library(tidyverse)      # Her får vi %>%, ggplot2 og andre smarte funktioner.
 library(sf)             # Skal bruges til at arbejde med "simple features" (figurer).
 ```
 
+```{r}
+#| echo: false
+# Sætter timeout til 10 minutter, fordi afstemingsstederne kan tage lang tid om at hente
+options(timeout = 600)
+```
+
+
 ## Data
 
-For at tegne et præcist danmarkskort kan vi hente `geojson` data fra [Styrelsen for Dataforsyning og Infrastruktur](https://sdfi.dk/). De udstiller en udmærket `API` der kan levere kortdata til os. For at vi kan benytte en `API` i `R` skal vi først definere et `URL` og dernæst bede om at downloade den fil der hører til på den hjemmeside.
+For at tegne et præcist danmarkskort kan vi hente `geojson` data fra @apidawa2024. De udstiller en udmærket `API` der kan levere kortdata til os. For at vi kan benytte en `API` i `R` skal vi først definere et `URL` og dernæst bede om at downloade den fil der hører til på den hjemmeside.
 
-::: {.aside}
-Du behøver *ikke* at vide hvad en `API` er for at kunne gennemføre denne guide.
-:::
 
 1. Først definerer vi `API`ens `URL`.
 
@@ -47,6 +56,10 @@ Du behøver *ikke* at vide hvad en `API` er for at kunne gennemføre denne guide
 ## Gemmer URL til API-kald
 url <- "https://api.dataforsyningen.dk/afstemningsomraader?format=geojson"
 ```
+
+::: {.aside}
+Du behøver *ikke* at vide hvad en `API` er for at kunne gennemføre denne guide.
+:::
 
 2. Dernæst beder vi `R` om at downloade den efterspurgte fil til en midlertidig placering i computerens hukommelse.
 
@@ -74,49 +87,62 @@ Her omformes først til `st` og dernæst til `sf`.
 
 Nu har vi en dataframe i `afstemningssteder_geodata` der indeholder de figurer vi skal bruge for at lave et danmarkskort!
 
+### Optimering af data
+
+For at vi nemt kan rendere vores plots er det en god ide at gøre figurerne en smule mindre. *Især* når vi er helt nede på afstemningsstedsniveau. Det er nok ikke så relevant, hvis vi arbejder med kommuner eller landsdele.
+
 ```{r}
+afstemningssteder_geodata <- rmapshaper::ms_simplify(afstemningssteder_geodata,
+                                                     keep = 0.01, keep_shapes = TRUE)
+```
 
-vind_afstemningssteder_geodata <- rmapshaper::ms_simplify(vind_afstemningssteder_geodata, keep = 0.01, keep_shapes = TRUE)
+::: {.aside}
+Her indlæser vi `rmapshaper::ms_simplify()` med pakkens navn for at slippe for at indlæse hele pakken - Vi skal nemlig ikke bruge det hele! Det samme har vi gjort med `ggthemes::theme_map()` nedenfor, fordi der kun skal bruges det ene *theme*
+:::
 
-aarhus_afstemningssteder <- vind_afstemningssteder_geodata %>%
+## Visualisering
+
+Nu kommer vi til den sjove del - At lave selve kortet! Vi skal bruge `ggplot2` fra det velkendte *tidyverse*, præcis som når vi laver grafer i mange andre sammenhænge.
+
+Vi bruger `geom_sf`, der er indbygget i `ggplot2` til at tegne de figurer der er opbevaret i vores dataframe. Jeg putter derudover også `ggthemes::theme_map()` på, fordi jeg ikke synes kort behøver akselinjer og en baggrund. `theme_map()` er mit klart foretrukne tema til kort.
+
+```{r fig-dk}
+#| output: true
+#| cache: false
+#| fig-cap: Kort over alle afstemningsområder i hele Danmark. Kilde og titel tilføjet.
+ggplot(afstemningssteder_geodata) +
+  geom_sf() +
+  ggthemes::theme_map() +
+  labs(title = "Afstemningssteder i Danmark",
+       caption = "Kilde: DAWA/DAGI") +
+  theme(legend.position = "none",
+        plot.title = element_text(size = 20),
+        plot.caption = element_text(size = 10))
+```
+
+### Visualisering af udsnit
+
+For at kun vise de afstemningsområder der ligger i Aarhus Kommune kan vi benytte os af `filter()` funktionen fra `dplyr` pakken. Med den kan vi filtrere i vores dataframe, så der kun vises afstemningssteder, hvor kommunenavnet er "Aarhus". Derudover har jeg tilføjet et `fill` på afstemningsområdets navn for at give hver område sin egen farve.
+
+```{r fig-aarhus}
+#| output: true
+#| cache: false
+#| fig-cap: Kort over alle afstemningsområder i Aarhus Kommune.
+afstemningssteder_geodata %>%
   filter(kommunenavn == "Aarhus") %>%
   ggplot(aes(fill = navn)) +
   geom_sf() +
   ggthemes::theme_map() +
   theme(legend.position = "none")
-
-bw_afstemningssteder <- ggplot(vind_afstemningssteder_geodata) +
-  geom_sf() +
-  ggthemes::theme_map() +
-  labs(title = "Afstemningssteder i Danmark", caption = "Kilde: DAWA/DAGI") +
-  theme(legend.position = "none", title = element_text(size = 20))
-```
-
-::: {.aside}
-Her indlæser vi `rmapshaper::ms_simplify()` med pakkens navn for at slippe for at indlæse hele pakken - Vi skal nemlig ikke bruge det hele! Det samme har vi gjort med `ggthemes::theme_map()`, fordi der kun skal bruges det ene *theme*
-:::
-
-```{r}
-aarhus_afstemningssteder
-bw_afstemningssteder
 ```
 
 ## Samlet kode
 
 Alt hvad jeg har gennemgået i denne guide kan findes i et samlet `r`-script [på min github](https://github.com/aleksanderbl29/aleksanderbldk/blob/main/guides/2024-06-29-danmarkskort-i-r/kort.r).
 
-## Gammelt kode
-
-```{r api-kode-1}
-
-log_info("Starter download af geoJSON")
-starttid <- Sys.time()
-
-sluttid <- Sys.time()
-log_info("GeoJSON downloadet")
-
-download_tid <- sluttid - starttid
-log_info(paste("Det tog", round(download_tid, 3), "minutter at downloade"))
-
-# sf_use_s2(FALSE)
+```{r}
+#| echo: false
+# Sætter timout tilbage til 1 minut
+options(timeout = 60)
 ```
+
