@@ -22,6 +22,8 @@ website:
         text: CV
         icon: file-earmark-person-fill
         target: _blank
+      - href: cv.qmd
+        text: Quarto CV
       - about.qmd
       - text: Kontakt mig
         menu:

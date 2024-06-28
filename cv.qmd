@@ -1,0 +1,40 @@
+---
+subtitle: Curriculum Vitae
+---
+
+# Om mig
+
+Jeg er statskundsksabsstuderende med en stor interesse for kvantitative metoder og vælgeradfærd.
+
+Udover mine studier bruger jeg meget tid på at lære nye ting, og jeg har viden indenfor mange teknologiske emner.
+
+# Uddannelse
+
+## 2021 til 2026 --- Statskundskab v. Aarhus Universitet
+
+### Kandidat --- 2024 til 2026
+
+Jeg er i gang med min kandidat i statskundskab på Aarhus Universitet. Her har jeg stort fokus på kvantitative metoder, analyser og visualiseringer samt datascience i politisk kontekst.
+
+### Bachelor --- 2021 til 2024
+
+Jeg færdiggjorde i sommeren 2024 min bachelor i statskundskab på Aarhus Universitet. Her havde jeg valgfag om vælgeradfærd og skrev min bacheloropgave i vælgeradfærd og politisk repræsentation. I min bacheloropgave undersøgte jeg spørgsmålet: *Hvordan er vælgernes elektorale reaktion på opførslen af vindmøller i lokalområdet*. For den opnåede jeg karakteren X.
+
+## 2017 til 2020 --- Studentereksamen fra Herning Gymnasium
+
+Jeg har min studentereksamen fra Herning Gymnasium. Her havde jeg en samfundssproglig studieretning med samfundsfag A, engelsk A og fransk A som hovedfag.
+
+# Erfaring
+
+## 2023 til nu --- Underviser i Excel og VBA hos Djøf
+
+Underviser i Excel og VBA for Djøf Studerende, hvor jeg underviser medlemmer af Djøf Studerende i Excel på fire kursusniveauer samt VBA på to niveauer.
+Her har jeg fået forbedret mine undervisningskompetencer og er blevet bedste venner med Excel.
+
+## 2021 til 2023 --- Student Assistant hos EG A/S
+
+Ansat som studentermedhjælper i først kreditor-bogholderiet, og derefter debitor-bogholderiet, i IT-virksomheden EG, hvor jeg indtil studiestart i september 2021 arbejdede fuldtid og herefter deltid ved siden af studiet. Jeg håndterede varierende bogholderi-opgaver i Excel, ERP-systemet NetSuite samt lønningssystemet Zalaris.
+
+## 2020 til 2021 --- Video Editor og ansvarlig for webshops hos Gigantic ApS
+
+I de første 4 måneder af min ansættelse var mine primære opgaver at redigere reklame-indhold til sociale medier for diverse webshops i virksomheden i Shopify. Herefter fik jeg ansvaret for et af virksomhedens webshop-brands, hvor jeg styrede webshops i Danmark, Sverige, Norge og Finland.
