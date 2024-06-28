@@ -19,5 +19,3 @@ title-block-banner: true
 page-navigation: true
 ---
 
-
-Denne side vil indeholde de guides jeg skriver {{< fa face-smile-beam >}}
