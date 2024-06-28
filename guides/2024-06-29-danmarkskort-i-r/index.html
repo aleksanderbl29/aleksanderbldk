@@ -243,11 +243,17 @@ div.csl-indent {
   <ul>
   <li><a href="#baggrund" id="toc-baggrund" class="nav-link active" data-scroll-target="#baggrund">Baggrund</a></li>
   <li><a href="#pakker" id="toc-pakker" class="nav-link" data-scroll-target="#pakker">Pakker</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a>
+  <ul class="collapse">
+  <li><a href="#optimering-af-data" id="toc-optimering-af-data" class="nav-link" data-scroll-target="#optimering-af-data">Optimering af data</a></li>
+  </ul></li>
+  <li><a href="#visualisering" id="toc-visualisering" class="nav-link" data-scroll-target="#visualisering">Visualisering</a>
+  <ul class="collapse">
+  <li><a href="#visualisering-af-udsnit" id="toc-visualisering-af-udsnit" class="nav-link" data-scroll-target="#visualisering-af-udsnit">Visualisering af udsnit</a></li>
+  </ul></li>
   <li><a href="#samlet-kode" id="toc-samlet-kode" class="nav-link" data-scroll-target="#samlet-kode">Samlet kode</a></li>
-  <li><a href="#gammelt-kode" id="toc-gammelt-kode" class="nav-link" data-scroll-target="#gammelt-kode">Gammelt kode</a></li>
   </ul>
-<div class="quarto-other-links"><h2>Andre links</h2><ul><li><a href="https://github.com/aleksanderbl29/aleksanderbldk/blob/main/guides/2024-06-29-danmarkskort-i-r/kort.r"><i class="bi bi-code"></i>Samlet script</a></li></ul></div></nav>
+<div class="quarto-other-links"><h2>Andre links</h2><ul><li><a href="https://github.com/aleksanderbl29/aleksanderbldk/blob/main/guides/2024-06-29-danmarkskort-i-r/kort.r"><i class="bi bi-code"></i>Samlet script</a></li><li><a href="https://www.linkedin.com/pulse/easy-maps-denmark-r-mikkel-freltoft-krogsholm/"><i class="bi bi-link-45deg"></i>Mikkel Krogsholms guide</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
@@ -259,6 +265,7 @@ div.csl-indent {
 <section id="baggrund" class="level2">
 <h2 class="anchored" data-anchor-id="baggrund">Baggrund</h2>
 <p>Da jeg skulle lære at lave kort i R, lavede jeg et par hurtige googlesøgninger, hvor jeg kom frem til en god guide lavet af Mikkel Freltoft <span class="citation" data-cites="krogsholm2021">Krogsholm (<a href="#ref-krogsholm2021" role="doc-biblioref">2021</a>)</span>. Jeg opdagede dog hurtigt, at guiden er out-of-date - og derfor skriver jeg denne guide.</p>
+<p>I denne guide vil jeg gennemgå hvordan man kan skabe et kort over alle afstemningssteders områder i Danmark. Vi vil både producere et kort for Aarhus Kommune (<a href="#fig-aarhus" class="quarto-xref">Figur&nbsp;2</a>) og et kort for alle afstemningsområder i hele Danmark (<a href="#fig-dk" class="quarto-xref">Figur&nbsp;1</a>).</p>
 </section>
 <section id="pakker" class="level2">
 <h2 class="anchored" data-anchor-id="pakker">Pakker</h2>
@@ -268,21 +275,24 @@ div.csl-indent {
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)      <span class="co"># Her får vi %&gt;%, ggplot2 og andre smarte funktioner.</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)             <span class="co"># Skal bruges til at arbejde med "simple features" (figurer).</span></span></code><button title="Kopier til udklipsholder" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="cell">
+
+</div>
 </section>
 <section id="data" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="data">Data</h2>
-<p>For at tegne et præcist danmarkskort kan vi hente <code>geojson</code> data fra <a href="https://sdfi.dk/">Styrelsen for Dataforsyning og Infrastruktur</a>. De udstiller en udmærket <code>API</code> der kan levere kortdata til os. For at vi kan benytte en <code>API</code> i <code>R</code> skal vi først definere et <code>URL</code> og dernæst bede om at downloade den fil der hører til på den hjemmeside.</p>
-
-<div class="no-row-height column-margin column-container"><div class="margin-aside">
-<p>Du behøver <em>ikke</em> at vide hvad en <code>API</code> er for at kunne gennemføre denne guide.</p>
-</div></div><ol type="1">
+<p>For at tegne et præcist danmarkskort kan vi hente <code>geojson</code> data fra <span class="citation" data-cites="apidawa2024">Styrelsen for Dataforsyning og Infrastruktur (<a href="#ref-apidawa2024" role="doc-biblioref">2024</a>)</span>. De udstiller en udmærket <code>API</code> der kan levere kortdata til os. For at vi kan benytte en <code>API</code> i <code>R</code> skal vi først definere et <code>URL</code> og dernæst bede om at downloade den fil der hører til på den hjemmeside.</p>
+<ol type="1">
 <li>Først definerer vi <code>API</code>ens <code>URL</code>.</li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Gemmer URL til API-kald</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://api.dataforsyningen.dk/afstemningsomraader?format=geojson"</span></span></code><button title="Kopier til udklipsholder" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ol start="2" type="1">
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p>Du behøver <em>ikke</em> at vide hvad en <code>API</code> er for at kunne gennemføre denne guide.</p>
+</div></div><ol start="2" type="1">
 <li>Dernæst beder vi <code>R</code> om at downloade den efterspurgte fil til en midlertidig placering i computerens hukommelse.</li>
 </ol>
 <div class="cell">
@@ -305,47 +315,74 @@ div.csl-indent {
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
 <p>Her omformes først til <code>st</code> og dernæst til <code>sf</code>.</p>
 </div></div><p>Nu har vi en dataframe i <code>afstemningssteder_geodata</code> der indeholder de figurer vi skal bruge for at lave et danmarkskort!</p>
+<section id="optimering-af-data" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="optimering-af-data">Optimering af data</h3>
+<p>For at vi nemt kan rendere vores plots er det en god ide at gøre figurerne en smule mindre. <em>Især</em> når vi er helt nede på afstemningsstedsniveau. Det er nok ikke så relevant, hvis vi arbejder med kommuner eller landsdele.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>vind_afstemningssteder_geodata <span class="ot">&lt;-</span> rmapshaper<span class="sc">::</span><span class="fu">ms_simplify</span>(vind_afstemningssteder_geodata, <span class="at">keep =</span> <span class="fl">0.01</span>, <span class="at">keep_shapes =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>aarhus_afstemningssteder <span class="ot">&lt;-</span> vind_afstemningssteder_geodata <span class="sc">%&gt;%</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(kommunenavn <span class="sc">==</span> <span class="st">"Aarhus"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> navn)) <span class="sc">+</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  ggthemes<span class="sc">::</span><span class="fu">theme_map</span>() <span class="sc">+</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>bw_afstemningssteder <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(vind_afstemningssteder_geodata) <span class="sc">+</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  ggthemes<span class="sc">::</span><span class="fu">theme_map</span>() <span class="sc">+</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Afstemningssteder i Danmark"</span>, <span class="at">caption =</span> <span class="st">"Kilde: DAWA/DAGI"</span>) <span class="sc">+</span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>, <span class="at">title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>))</span></code><button title="Kopier til udklipsholder" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>afstemningssteder_geodata <span class="ot">&lt;-</span> rmapshaper<span class="sc">::</span><span class="fu">ms_simplify</span>(afstemningssteder_geodata,</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>                                                     <span class="at">keep =</span> <span class="fl">0.01</span>, <span class="at">keep_shapes =</span> <span class="cn">TRUE</span>)</span></code><button title="Kopier til udklipsholder" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
-<p>Her indlæser vi <code>rmapshaper::ms_simplify()</code> med pakkens navn for at slippe for at indlæse hele pakken - Vi skal nemlig ikke bruge det hele! Det samme har vi gjort med <code>ggthemes::theme_map()</code>, fordi der kun skal bruges det ene <em>theme</em></p>
-</div></div><div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>aarhus_afstemningssteder</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>bw_afstemningssteder</span></code><button title="Kopier til udklipsholder" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Her indlæser vi <code>rmapshaper::ms_simplify()</code> med pakkens navn for at slippe for at indlæse hele pakken - Vi skal nemlig ikke bruge det hele! Det samme har vi gjort med <code>ggthemes::theme_map()</code> nedenfor, fordi der kun skal bruges det ene <em>theme</em></p>
+</div></div></section>
+</section>
+<section id="visualisering" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="visualisering">Visualisering</h2>
+<p>Nu kommer vi til den sjove del - At lave selve kortet! Vi skal bruge <code>ggplot2</code> fra det velkendte <em>tidyverse</em>, præcis som når vi laver grafer i mange andre sammenhænge.</p>
+<p>Vi bruger <code>geom_sf</code>, der er indbygget i <code>ggplot2</code> til at tegne de figurer der er opbevaret i vores dataframe. Jeg putter derudover også <code>ggthemes::theme_map()</code> på, fordi jeg ikke synes kort behøver akselinjer og en baggrund. <code>theme_map()</code> er mit klart foretrukne tema til kort.</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(afstemningssteder_geodata) <span class="sc">+</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  ggthemes<span class="sc">::</span><span class="fu">theme_map</span>() <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Afstemningssteder i Danmark"</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Kilde: DAWA/DAGI"</span>) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">20</span>),</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>))</span></code><button title="Kopier til udklipsholder" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-dk" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-dk-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-dk-1.png" class="img-fluid figure-img" width="672">
 </div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-dk-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;1: Kort over alle afstemningsområder i hele Danmark. Kilde og titel tilføjet.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="visualisering-af-udsnit" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="visualisering-af-udsnit">Visualisering af udsnit</h3>
+<p>For at kun vise de afstemningsområder der ligger i Aarhus Kommune kan vi benytte os af <code>filter()</code> funktionen fra <code>dplyr</code> pakken. Med den kan vi filtrere i vores dataframe, så der kun vises afstemningssteder, hvor kommunenavnet er “Aarhus”. Derudover har jeg tilføjet et <code>fill</code> på afstemningsområdets navn for at give hver område sin egen farve.</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>afstemningssteder_geodata <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(kommunenavn <span class="sc">==</span> <span class="st">"Aarhus"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> navn)) <span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_sf</span>() <span class="sc">+</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  ggthemes<span class="sc">::</span><span class="fu">theme_map</span>() <span class="sc">+</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code><button title="Kopier til udklipsholder" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display page-columns page-full">
+<div id="fig-aarhus" class="quarto-figure quarto-figure-center quarto-float anchored page-columns page-full">
+<figure class="quarto-float quarto-float-fig figure page-columns page-full">
+<div aria-describedby="fig-aarhus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index_files/figure-html/fig-aarhus-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-margin quarto-float-caption quarto-float-fig margin-caption" id="fig-aarhus-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;2: Kort over alle afstemningsområder i Aarhus Kommune.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="samlet-kode" class="level2">
 <h2 class="anchored" data-anchor-id="samlet-kode">Samlet kode</h2>
 <p>Alt hvad jeg har gennemgået i denne guide kan findes i et samlet <code>r</code>-script <a href="https://github.com/aleksanderbl29/aleksanderbldk/blob/main/guides/2024-06-29-danmarkskort-i-r/kort.r">på min github</a>.</p>
-</section>
-<section id="gammelt-kode" class="level2">
-<h2 class="anchored" data-anchor-id="gammelt-kode">Gammelt kode</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log_info</span>(<span class="st">"Starter download af geoJSON"</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>starttid <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>sluttid <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">log_info</span>(<span class="st">"GeoJSON downloadet"</span>)</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>download_tid <span class="ot">&lt;-</span> sluttid <span class="sc">-</span> starttid</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">log_info</span>(<span class="fu">paste</span>(<span class="st">"Det tog"</span>, <span class="fu">round</span>(download_tid, <span class="dv">3</span>), <span class="st">"minutter at downloade"</span>))</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># sf_use_s2(FALSE)</span></span></code><button title="Kopier til udklipsholder" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </div>
 
 
@@ -355,6 +392,9 @@ div.csl-indent {
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Referencer</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-krogsholm2021" class="csl-entry" role="listitem">
 Krogsholm, Mikkel Freltoft. 2021. <span>“Easy Maps of <span>Denmark</span> in <span>R</span> <span></span> <span>LinkedIn</span>”</span>. https://www.linkedin.com/pulse/easy-maps-denmark-r-mikkel-freltoft-krogsholm/.
+</div>
+<div id="ref-apidawa2024" class="csl-entry" role="listitem">
+Styrelsen for Dataforsyning og Infrastruktur. 2024. <span>“<span>DAWA</span>: <span>Danmarks Adressers Web API</span> Hos <span>Dataforsyningen</span>”</span>. https://dawadocs.dataforsyningen.dk/dok/guides.
 </div>
 </div></section><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citat</h2><div><div class="quarto-appendix-secondary-label">Henvis til denne guide som:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{bang-larsen2024,
   author = {Bang-Larsen, Aleksander},
