@@ -1,0 +1,31 @@
+---
+title: Sådan skriver du en bachelor med Quarto og R
+description: En gennemgang af, hvordan jeg skrev mit bachelorprojekt med Quarto, R og Zotero
+categories: [Zotero, R, Quarto, BibTex]
+citation:
+  url: https://aleksanderbl.dk/guides/2024-06-30-skriv-bachelor-med-quarto
+bibliography: refs.bib
+date: 2024-06-30
+# other-links:
+#   - text: Send mig en mail
+#     icon: envelope
+#     href: mailto:hej@aleksanderbl.dk
+#   - text: politica-w-ibid.csl
+#     icon: download
+#     href: https://github.com/aleksanderbl29/styles/blob/79186cf2cabe963d9863438be4efaf5b5ac41131/politica-w-ibid.csl
+#   - text: politica.csl
+#     icon: download
+#     href: https://github.com/aleksanderbl29/styles/blob/79186cf2cabe963d9863438be4efaf5b5ac41131/politica.csl
+---
+
+Sådan skriver du en bachelor med quarto
+
+En bachelor på IFSK skal indeholde:
+
+# Indholdsfortegnelse
+
+# Litteraturliste
+
+## Kort
+
+Jeg har lavet danmarkskort i forbindelse med min opgave. Det har jeg skrevet [en guide om](../2024-05-19-danmarkskort-i-r/index.qmd)

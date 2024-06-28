@@ -3,6 +3,7 @@ title: Hvordan laver man en hjemmeside med Quarto?
 description: Vi gennemgår layout, generering af indhold og hvordan du får din side "ud på internettet"
 date: 2024-05-15
 categories: [Quarto, R, Github Actions]
+draft: true
 aliases:
   - quarto-blog.html
 citation:
