@@ -7,6 +7,20 @@
     "text": "Denne side vil indeholde de guides jeg skriver"
   },
   {
+    "objectID": "guides/2024-05-17-installer-output-zotero/index.html",
+    "href": "guides/2024-05-17-installer-output-zotero/index.html",
+    "title": "Sådan installerer du et nyt output-format i Zotero",
+    "section": "",
+    "text": "Denne guide er beregnet til personer der er blevet vist hertil og har fået tilsendt mit speciallavede politica-output til Zotero. Her vil du finde vejledning til, hvordan du importerer og bruger den med dine henvisninger."
+  },
+  {
+    "objectID": "guides/2024-05-17-installer-output-zotero/index.html#baggrund",
+    "href": "guides/2024-05-17-installer-output-zotero/index.html#baggrund",
+    "title": "Sådan installerer du et nyt output-format i Zotero",
+    "section": "",
+    "text": "Denne guide er beregnet til personer der er blevet vist hertil og har fået tilsendt mit speciallavede politica-output til Zotero. Her vil du finde vejledning til, hvordan du importerer og bruger den med dine henvisninger."
+  },
+  {
     "objectID": "guides/2024-05-19-danmarkskort-i-r/index.html",
     "href": "guides/2024-05-19-danmarkskort-i-r/index.html",
     "title": "Nemt Danmarkskort i R",
@@ -19,13 +33,6 @@
     "title": "Nemt Danmarkskort i R",
     "section": "",
     "text": "Da jeg skulle lære at lave kort i R, lavede jeg et par hurtige googlesøgninger, hvor jeg kom frem til en god guide lavet af Mikkel Freltoft Krogsholm (2021). Jeg opdagede dog hurtigt, at guiden er out-of-date (hvorfor jeg skriver denne guide)."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Aleksander Bang-Larsen",
-    "section": "",
-    "text": "Hej! Jeg hedder Aleksander og studerer statskundskab ved Aarhus Universitet.\nHer på siden har jeg samlet mit cv, beretninger om min teknologiske læring og en række guides til at give noget af min læring videre."
   },
   {
     "objectID": "guides/2024-05-17-quarto-blog/index.html",
@@ -42,17 +49,10 @@
     "text": "Hvilke værktøjer skal vi bruge og hvordan spiller de sammen?\n\n\nWhen you’ve written the same code 3 times, write a functionWhen you’ve given the same in-person advice 3 times, write a blog post\n\n— David Robinson (@drob) November 9, 2017"
   },
   {
-    "objectID": "guides/2024-05-17-installer-output-zotero/index.html",
-    "href": "guides/2024-05-17-installer-output-zotero/index.html",
-    "title": "Sådan installerer du et nyt output-format i Zotero",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Aleksander Bang-Larsen",
     "section": "",
-    "text": "Denne guide er beregnet til personer der er blevet vist hertil og har fået tilsendt mit speciallavede politica-output til Zotero. Her vil du finde vejledning til, hvordan du importerer og bruger den med dine henvisninger."
-  },
-  {
-    "objectID": "guides/2024-05-17-installer-output-zotero/index.html#baggrund",
-    "href": "guides/2024-05-17-installer-output-zotero/index.html#baggrund",
-    "title": "Sådan installerer du et nyt output-format i Zotero",
-    "section": "",
-    "text": "Denne guide er beregnet til personer der er blevet vist hertil og har fået tilsendt mit speciallavede politica-output til Zotero. Her vil du finde vejledning til, hvordan du importerer og bruger den med dine henvisninger."
+    "text": "Hej! Jeg hedder Aleksander og studerer statskundskab ved Aarhus Universitet.\nHer på siden har jeg samlet mit cv, beretninger om min teknologiske læring og en række guides til at give noget af min læring videre."
   }
 ]
