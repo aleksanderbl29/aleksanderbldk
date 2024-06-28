@@ -49,69 +49,6 @@
     "text": "Hej! Jeg hedder Aleksander og studerer statskundskab ved Aarhus Universitet.\nHer på siden har jeg samlet mit cv, beretninger om min teknologiske læring og en række guides til at give noget af min læring videre."
   },
   {
-    "objectID": "guides/2024-05-17-installer-output-zotero/index.html",
-    "href": "guides/2024-05-17-installer-output-zotero/index.html",
-    "title": "Sådan installerer du et nyt output-format i Zotero",
-    "section": "",
-    "text": "Denne guide er beregnet til dig, der er interesseret i, hvordan man installerer et custom output i Zotero. Måske er du blevet henvist hertil er blevet vist hertil og har fået tilsendt mit speciallavede politica-output til Zotero. Her vil du finde vejledning til, hvordan du importerer og bruger den med dine henvisninger.\nDenne guide tager udgangspunkt i, at du allerede har Zotero 6 installeret. Du kan downloade Zotero på programmets hjemmeside."
-  },
-  {
-    "objectID": "guides/2024-05-17-installer-output-zotero/index.html#baggrund",
-    "href": "guides/2024-05-17-installer-output-zotero/index.html#baggrund",
-    "title": "Sådan installerer du et nyt output-format i Zotero",
-    "section": "",
-    "text": "Denne guide er beregnet til dig, der er interesseret i, hvordan man installerer et custom output i Zotero. Måske er du blevet henvist hertil er blevet vist hertil og har fået tilsendt mit speciallavede politica-output til Zotero. Her vil du finde vejledning til, hvordan du importerer og bruger den med dine henvisninger.\nDenne guide tager udgangspunkt i, at du allerede har Zotero 6 installeret. Du kan downloade Zotero på programmets hjemmeside."
-  },
-  {
-    "objectID": "guides/2024-05-17-installer-output-zotero/index.html#ting-du-skal-igennem",
-    "href": "guides/2024-05-17-installer-output-zotero/index.html#ting-du-skal-igennem",
-    "title": "Sådan installerer du et nyt output-format i Zotero",
-    "section": "Ting du skal igennem",
-    "text": "Ting du skal igennem\n\nDownloade csl filer og placere et smart sted (f.eks. sammen med zotero)\nInstallere output-formatet\nVælge det som default output\nBruge output i word"
-  },
-  {
-    "objectID": "guides/2024-05-17-installer-output-zotero/index.html#download-og-placering-af-csl-filer",
-    "href": "guides/2024-05-17-installer-output-zotero/index.html#download-og-placering-af-csl-filer",
-    "title": "Sådan installerer du et nyt output-format i Zotero",
-    "section": "Download og placering af csl-filer",
-    "text": "Download og placering af csl-filer\nDu skal sørge for, at filerne ligger et sted, hvor du kan finde dem. Jeg har mine til at ligge i OneDrive sammen med mine andre dokumenter.\n\n\n\n\n\nDe to filer der skal gemmes\n\n\nHvis du ikke allerede har fået tilsendt csl filerne, kan du hente dem ude til højre.\n\nHvad er forskellen på politica og politica-w-ibid?\npolitica.csl er den stil du skal bruge, hvis du ikke ønsker at Zotero laver ibid automatisk eller du ønsker manuelt at skrive ibid. politica-w-ibid.csl er den stil du skal bruge, hvis du ønsker at Zotero automatisk indsætter ibid når du bruger den samme reference to gange i træk; og tæt på hinanden."
-  },
-  {
-    "objectID": "guides/2024-05-17-installer-output-zotero/index.html#installation-af-output",
-    "href": "guides/2024-05-17-installer-output-zotero/index.html#installation-af-output",
-    "title": "Sådan installerer du et nyt output-format i Zotero",
-    "section": "Installation af output",
-    "text": "Installation af output\nFor at installere output-stilen skal du blot dobbeltklikke på csl filen på dit drev. Så får du denne besked op:\n\n\n\nSådan skal det se ud, når du prøver at installere output\n\n\nHer skal du trykke Install og så vil stilen automatisk installeres. Det skal du gentage for alle de output-stiler du vil installere.\n\n\nHint: Du kan tjekke de output-stiler der er installeret ved at gå i Settings og under Cite er alle tilgængelige output-stile listet."
-  },
-  {
-    "objectID": "guides/2024-05-17-installer-output-zotero/index.html#brug-af-output",
-    "href": "guides/2024-05-17-installer-output-zotero/index.html#brug-af-output",
-    "title": "Sådan installerer du et nyt output-format i Zotero",
-    "section": "Brug af output",
-    "text": "Brug af output\n\nWord"
-  },
-  {
-    "objectID": "guides/2024-05-17-installer-output-zotero/index.html#faq",
-    "href": "guides/2024-05-17-installer-output-zotero/index.html#faq",
-    "title": "Sådan installerer du et nyt output-format i Zotero",
-    "section": "FAQ",
-    "text": "FAQ\n\nJeg har fundet en fejl i outputtet - Hvad gør jeg?\n\nHvis du har fundet en fejl i en af de styles jeg har produceret kan du sende mig en mail eller tage fat på mig IRL eller på diverse sociale medier.\nHvis der er tale om en fejlimplementering i forhold til skrivevejledningen fra politica retter jeg den med glæde.\n\nEllers kan vi tale om at producere en stil der passer til dine ønsker.\n\nNår du kontakter mig vedrørende en fejl er det en god ide at sende din csl-fil med; det gør det nemlig nememre at finde ud af, hvad fejlen er og hvor den findes.\n\n\n\nHvorfor kan jeg ikke bare downloade output-stilen inde i Zotero som man kan med andre?\n\nJeg arbejder på at få denne output-stil integreret i den primære downloadside, men det kræver at CSL-projektet vil acceptere den. Du kan læse mere om, hvad det kræver her."
-  },
-  {
-    "objectID": "guides/2024-06-30-skriv-bachelor-med-quarto/index.html",
-    "href": "guides/2024-06-30-skriv-bachelor-med-quarto/index.html",
-    "title": "Sådan skriver du en bachelor med Quarto og R",
-    "section": "",
-    "text": "Sådan skriver du en bachelor med quarto\nEn bachelor på IFSK skal indeholde:"
-  },
-  {
-    "objectID": "guides/2024-06-30-skriv-bachelor-med-quarto/index.html#kort",
-    "href": "guides/2024-06-30-skriv-bachelor-med-quarto/index.html#kort",
-    "title": "Sådan skriver du en bachelor med Quarto og R",
-    "section": "Kort",
-    "text": "Kort\nJeg har lavet danmarkskort i forbindelse med min opgave. Det har jeg skrevet en guide om"
-  },
-  {
     "objectID": "guides/2024-06-29-danmarkskort-i-r/index.html",
     "href": "guides/2024-06-29-danmarkskort-i-r/index.html",
     "title": "Nemt Danmarkskort i R",
@@ -158,6 +95,6 @@
     "href": "guides.html",
     "title": "Guides",
     "section": "",
-    "text": "Denne side vil indeholde de guides jeg skriver \n\n\n\n\n\n\n   \n     \n     \n       Sorter ved\n       Standard\n         \n          Overskrift\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nSådan skriver du en bachelor med Quarto og R\n\n\nEn gennemgang af, hvordan jeg skrev mit bachelorprojekt med Quarto, R og Zotero\n\n\n\n\n\n\n\n\n\n\n\nNemt Danmarkskort i R\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSådan installerer du et nyt output-format i Zotero\n\n\nEn kort guide til installation af Politica output format\n\n\n\n\n\n\n\nIngen resultater"
+    "text": "Denne side vil indeholde de guides jeg skriver \n\n\n\n\n\n\n   \n     \n     \n       Sorter ved\n       Standard\n         \n          Overskrift\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nNemt Danmarkskort i R\n\n\n\n\n\n\n\n\n\n\nIngen resultater"
   }
 ]
