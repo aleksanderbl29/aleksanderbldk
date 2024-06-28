@@ -18,12 +18,13 @@ website:
         text: Forside
         icon: house-door-fill
       - guides.qmd
-      - href: https://cv.aleksanderbl.dk
-        text: CV
-        icon: file-earmark-person-fill
-        target: _blank
+      # - href: https://cv.aleksanderbl.dk
+      #   text: CV
+      #   icon: file-earmark-person-fill
+      #   target: _blank
       - href: cv.qmd
-        text: Quarto CV
+        # text: Quarto CV
+        text: CV
       - about.qmd
       - text: Kontakt mig
         menu:
