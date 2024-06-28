@@ -6,6 +6,7 @@ citation:
   url: https://aleksanderbl.dk/guides/2024-06-30-skriv-bachelor-med-quarto
 bibliography: refs.bib
 date: 2024-06-30
+draft: true
 # other-links:
 #   - text: Send mig en mail
 #     icon: envelope

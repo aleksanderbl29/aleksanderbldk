@@ -9,6 +9,7 @@ citation:
 bibliography: refs.bib
 date: 2024-05-17
 last-modified: 2024-05-27
+draft: true
 other-links:
   - text: Send mig en mail
     icon: envelope
