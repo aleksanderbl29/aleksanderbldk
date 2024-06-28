@@ -14,7 +14,6 @@ other-links:
     icon: code
     href: https://github.com/aleksanderbl29/aleksanderbldk/blob/main/guides/2024-06-29-danmarkskort-i-r/kort.r
   - text: Mikkel Krogsholms guide
-    # icon: computer-mouse
     href: https://www.linkedin.com/pulse/easy-maps-denmark-r-mikkel-freltoft-krogsholm/ 
 fig-cap-location: margin
 date: 2024-06-29
