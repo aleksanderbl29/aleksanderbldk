@@ -1,0 +1,69 @@
+---
+title: Samlet kode til danmarkskort
+execute: 
+  echo: true
+  eval: false
+link-external-icon: true
+link-external-newwindow: true
+other-links:
+  - text: Samlet script
+    icon: code
+    href: https://github.com/aleksanderbl29/aleksanderbldk/blob/main/guides/2024-06-29-danmarkskort-i-r/kort.r
+draft: true
+# date: 2024-06-29
+author: ""
+---
+
+Herunder er den samlede kode fra [guiden til at lave et nemt danmarkskort](index.qmd).
+
+```{r}
+library(tidyverse)      # Her får vi %>%, ggplot2 og andre smarte funktioner.
+library(sf)             # Skal bruges til at arbejde med "simple features" (figurer).
+
+## Gemmer URL til API-kald
+url <- "https://api.dataforsyningen.dk/afstemningsomraader?format=geojson"
+
+# Sætter timeout til 10 minutter, fordi afstemingsstederne kan tage lang tid om at hente
+options(timeout = 600)
+
+# Skaber midlertidig fil
+geofile <- tempfile()
+
+# Henter geojson til tempfile
+download.file(url, geofile)
+
+# Læser datafilen ind i R
+geodata_st <- st_read(geofile)
+afstemningssteder_geodata <- st_as_sf(geodata_st)
+
+# Simplificerer geodata
+afstemningssteder_geodata <- rmapshaper::ms_simplify(afstemningssteder_geodata,
+                                                     keep = 0.01,
+                                                     keep_shapes = TRUE)
+
+# Skaber danmarkskort
+danmarkskort <- ggplot(afstemningssteder_geodata) +
+  geom_sf() +
+  ggthemes::theme_map() +
+  labs(title = "Afstemningssteder i Danmark",
+       caption = "Kilde: DAWA/DAGI") +
+  theme(legend.position = "none",
+        plot.title = element_text(size = 20),
+        plot.caption = element_text(size = 10))
+
+# Skaber kort over steder i Aarhus
+aarhus_kort <- afstemningssteder_geodata %>%
+  filter(kommunenavn == "Aarhus") %>%
+  ggplot(aes(fill = navn)) +
+  geom_sf() +
+  ggthemes::theme_map() +
+  theme(legend.position = "none")
+
+danmarkskort
+
+aarhus_kort
+
+# Sætter timout tilbage til 1 minut
+options(timeout = 60)
+```
+

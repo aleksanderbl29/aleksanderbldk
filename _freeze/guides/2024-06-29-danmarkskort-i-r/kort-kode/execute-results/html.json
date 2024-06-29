@@ -1,0 +1,15 @@
+{
+  "hash": "512a13b1e0a82632ab8ddd38edf16a19",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: Samlet kode til danmarkskort\nexecute: \n  echo: true\n  eval: false\nlink-external-icon: true\nlink-external-newwindow: true\nother-links:\n  - text: Samlet script\n    icon: code\n    href: https://github.com/aleksanderbl29/aleksanderbldk/blob/main/guides/2024-06-29-danmarkskort-i-r/kort.r\ndraft: true\n# date: 2024-06-29\nauthor: \"\"\n---\n\n\nHerunder er den samlede kode fra [guiden til at lave et nemt danmarkskort](index.qmd).\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(tidyverse)      # Her får vi %>%, ggplot2 og andre smarte funktioner.\nlibrary(sf)             # Skal bruges til at arbejde med \"simple features\" (figurer).\n\n## Gemmer URL til API-kald\nurl <- \"https://api.dataforsyningen.dk/afstemningsomraader?format=geojson\"\n\n# Sætter timeout til 10 minutter, fordi afstemingsstederne kan tage lang tid om at hente\noptions(timeout = 600)\n\n# Skaber midlertidig fil\ngeofile <- tempfile()\n\n# Henter geojson til tempfile\ndownload.file(url, geofile)\n\n# Læser datafilen ind i R\ngeodata_st <- st_read(geofile)\nafstemningssteder_geodata <- st_as_sf(geodata_st)\n\n# Simplificerer geodata\nafstemningssteder_geodata <- rmapshaper::ms_simplify(afstemningssteder_geodata,\n                                                     keep = 0.01,\n                                                     keep_shapes = TRUE)\n\n# Skaber danmarkskort\ndanmarkskort <- ggplot(afstemningssteder_geodata) +\n  geom_sf() +\n  ggthemes::theme_map() +\n  labs(title = \"Afstemningssteder i Danmark\",\n       caption = \"Kilde: DAWA/DAGI\") +\n  theme(legend.position = \"none\",\n        plot.title = element_text(size = 20),\n        plot.caption = element_text(size = 10))\n\n# Skaber kort over steder i Aarhus\naarhus_kort <- afstemningssteder_geodata %>%\n  filter(kommunenavn == \"Aarhus\") %>%\n  ggplot(aes(fill = navn)) +\n  geom_sf() +\n  ggthemes::theme_map() +\n  theme(legend.position = \"none\")\n\ndanmarkskort\n\naarhus_kort\n\n# Sætter timout tilbage til 1 minut\noptions(timeout = 60)\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
