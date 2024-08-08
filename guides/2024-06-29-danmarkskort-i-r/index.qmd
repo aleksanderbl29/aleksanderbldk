@@ -3,7 +3,7 @@ title: Nemt Danmarkskort i R
 citation:
   url: https://aleksanderbl.dk/guides/2024-05-19-danmarkskort-i-r
 bibliography: refs.bib
-execute: 
+execute:
   echo: true
   output: false
   cache: true
@@ -14,7 +14,7 @@ other-links:
     icon: code
     href: https://github.com/aleksanderbl29/aleksanderbldk/blob/main/guides/2024-06-29-danmarkskort-i-r/kort.r
   - text: Mikkel Krogsholms guide
-    href: https://www.linkedin.com/pulse/easy-maps-denmark-r-mikkel-freltoft-krogsholm/ 
+    href: https://www.linkedin.com/pulse/easy-maps-denmark-r-mikkel-freltoft-krogsholm/
 fig-cap-location: margin
 date: 2024-06-29
 ---
@@ -27,7 +27,7 @@ I denne guide vil jeg gennemgå hvordan man kan skabe et kort over alle afstemni
 
 ## Pakker
 
-I R-universet findes der flere pakker til at arbejde med kort. Jeg har valgt at bruge `sf`som den pakke jeg sætter mig ind i, hvad kan. De fleste kan grundlæggende det samme og er bygget op omkring `geometry`, der er den kolonne (eller variabel) i en dataframe, der indeholder figurerne til kortet.
+I R-universet findes der flere pakker til at arbejde med kort. Jeg har valgt at bruge `{sf}`som den pakke jeg sætter mig ind i, hvad kan. De fleste kan grundlæggende det samme og er bygget op omkring `geometry`, der er den kolonne (eller variabel) i en dataframe, der indeholder figurerne til kortet.
 
 Først indlæser vi alle pakker der skal bruges.
 
@@ -101,9 +101,9 @@ Her indlæser vi `rmapshaper::ms_simplify()` med pakkens navn for at slippe for 
 
 ## Visualisering
 
-Nu kommer vi til den sjove del - At lave selve kortet! Vi skal bruge `ggplot2` fra det velkendte *tidyverse*, præcis som når vi laver grafer i mange andre sammenhænge.
+Nu kommer vi til den sjove del - At lave selve kortet! Vi skal bruge `{ggplot2}` fra det velkendte *tidyverse*, præcis som når vi laver grafer i mange andre sammenhænge.
 
-Vi bruger `geom_sf`, der er indbygget i `ggplot2` til at tegne de figurer der er opbevaret i vores dataframe. Jeg putter derudover også `ggthemes::theme_map()` på, fordi jeg ikke synes kort behøver akselinjer og en baggrund. `theme_map()` er mit klart foretrukne tema til kort.
+Vi bruger `geom_sf`, der er indbygget i `{ggplot2}` til at tegne de figurer der er opbevaret i vores dataframe. Jeg putter derudover også `ggthemes::theme_map()` på, fordi jeg ikke synes kort behøver akselinjer og en baggrund. `theme_map()` er mit klart foretrukne tema til kort.
 
 ```{r fig-dk}
 #| output: true
@@ -121,7 +121,7 @@ ggplot(afstemningssteder_geodata) +
 
 ### Visualisering af udsnit
 
-For at kun vise de afstemningsområder der ligger i Aarhus Kommune kan vi benytte os af `filter()` funktionen fra `dplyr` pakken. Med den kan vi filtrere i vores dataframe, så der kun vises afstemningssteder, hvor kommunenavnet er "Aarhus". Derudover har jeg tilføjet et `fill` på afstemningsområdets navn for at give hver område sin egen farve.
+For at kun vise de afstemningsområder der ligger i Aarhus Kommune kan vi benytte os af `filter()` funktionen fra `{dplyr}` pakken. Med den kan vi filtrere i vores dataframe, så der kun vises afstemningssteder, hvor kommunenavnet er "Aarhus". Derudover har jeg tilføjet et `fill` på afstemningsområdets navn for at give hver område sin egen farve.
 
 ```{r fig-aarhus}
 #| output: true
