@@ -9,6 +9,7 @@ citation:
 bibliography: refs.bib
 date: 2024-05-17
 last-modified: 2024-05-27
+csl: documents/politica-w-ibid.csl
 draft: true
 other-links:
   - text: Send mig en mail
@@ -67,9 +68,17 @@ Hint: Du kan tjekke de output-stiler der er installeret ved at gå i `Settings` 
 
 :::
 
-
-
 ## Brug af output
+
+For at du kan bruge din output-stil skal du have nogle referencer klar i Zotero. Jeg har valgt nedenstående:
+
+- @togeby2003
+- @mouritsen2009
+- @midtgaard2011
+- @petersen2007
+- @bush2008
+
+I bunden af denne side kan du se en litteraturliste med disse henvisninger i fuld format - Og der kan du også se om output-stilen stemmer overens med Politicas skrivevejledning.
 
 ### Word
 
