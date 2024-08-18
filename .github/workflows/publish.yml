@@ -19,6 +19,11 @@ jobs:
         #   r-version: ${{ matrix.config.r }}
 
       - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: |
+            any::rmarkdown
+            any::knitr
+
 
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
