@@ -42,11 +42,18 @@
     "text": "2020 til 2021 — Video Editor og ansvarlig for webshops hos Gigantic ApS\nI de første 4 måneder af min ansættelse var mine primære opgaver at redigere reklame-indhold til sociale medier for diverse webshops i virksomheden i Shopify. Herefter fik jeg ansvaret for et af virksomhedens webshop-brands, hvor jeg styrede webshops i Danmark, Sverige, Norge og Finland."
   },
   {
+    "objectID": "guides/2024-06-29-danmarkskort-i-r/kort-kode.html",
+    "href": "guides/2024-06-29-danmarkskort-i-r/kort-kode.html",
+    "title": "Samlet kode til danmarkskort",
+    "section": "",
+    "text": "Herunder er den samlede kode fra guiden til at lave et nemt danmarkskort.\n\nlibrary(tidyverse)      # Her får vi %&gt;%, ggplot2 og andre smarte funktioner.\nlibrary(sf)             # Skal bruges til at arbejde med \"simple features\" (figurer).\n\n## Gemmer URL til API-kald\nurl &lt;- \"https://api.dataforsyningen.dk/afstemningsomraader?format=geojson\"\n\n# Sætter timeout til 10 minutter, fordi afstemingsstederne kan tage lang tid om at hente\noptions(timeout = 600)\n\n# Skaber midlertidig fil\ngeofile &lt;- tempfile()\n\n# Henter geojson til tempfile\ndownload.file(url, geofile)\n\n# Læser datafilen ind i R\ngeodata_st &lt;- st_read(geofile)\nafstemningssteder_geodata &lt;- st_as_sf(geodata_st)\n\n# Simplificerer geodata\nafstemningssteder_geodata &lt;- rmapshaper::ms_simplify(afstemningssteder_geodata,\n                                                     keep = 0.01,\n                                                     keep_shapes = TRUE)\n\n# Skaber danmarkskort\ndanmarkskort &lt;- ggplot(afstemningssteder_geodata) +\n  geom_sf() +\n  ggthemes::theme_map() +\n  labs(title = \"Afstemningssteder i Danmark\",\n       caption = \"Kilde: DAWA/DAGI\") +\n  theme(legend.position = \"none\",\n        plot.title = element_text(size = 20),\n        plot.caption = element_text(size = 10))\n\n# Skaber kort over steder i Aarhus\naarhus_kort &lt;- afstemningssteder_geodata %&gt;%\n  filter(kommunenavn == \"Aarhus\") %&gt;%\n  ggplot(aes(fill = navn)) +\n  geom_sf() +\n  ggthemes::theme_map() +\n  theme(legend.position = \"none\")\n\ndanmarkskort\n\naarhus_kort\n\n# Sætter timout tilbage til 1 minut\noptions(timeout = 60)"
+  },
+  {
     "objectID": "guides.html",
     "href": "guides.html",
     "title": "Guides",
     "section": "",
-    "text": "Sorter ved\n       Standard\n         \n          Overskrift\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nNemt Danmarkskort i R\n\n\n\n\n\n\n\n\n\n\nIngen resultater"
+    "text": "Sorter ved\n       Standard\n         \n          Overskrift\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nSamlet kode til danmarkskort\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNemt Danmarkskort i R\n\n\n\n\n\n\n\n\n\n\nIngen resultater"
   },
   {
     "objectID": "index.html",
