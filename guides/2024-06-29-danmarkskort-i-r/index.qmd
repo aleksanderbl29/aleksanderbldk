@@ -137,7 +137,7 @@ afstemningssteder_geodata %>%
 
 ## Samlet kode
 
-Alt hvad jeg har gennemgået i denne guide kan findes i et samlet `r`-script [på min github](https://github.com/aleksanderbl29/aleksanderbldk/blob/main/guides/2024-06-29-danmarkskort-i-r/kort.r). Den kan også findes [her på hjemmesiden](kort-kode.qmd).
+Alt hvad jeg har gennemgået i denne guide kan findes i et samlet `r`-script [på min github](https://github.com/aleksanderbl29/aleksanderbldk/blob/main/guides/2024-06-29-danmarkskort-i-r/kort.r). Den kan også findes [her på hjemmesiden](./kort-kode.qmd).
 
 ```{r}
 #| echo: false
