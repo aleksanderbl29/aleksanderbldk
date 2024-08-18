@@ -9,7 +9,7 @@ other-links:
   - text: Samlet script
     icon: code
     href: https://github.com/aleksanderbl29/aleksanderbldk/blob/main/guides/2024-06-29-danmarkskort-i-r/kort.r
-draft: true
+draft: false
 # date: 2024-06-29
 author: ""
 ---
